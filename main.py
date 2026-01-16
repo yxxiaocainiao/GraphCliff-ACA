@@ -175,7 +175,7 @@ def main():
     
     try: # Load the checkpoints and validation
         import glob
-        args.ckpt_path = glob.glob(f'250920_final_ckpt/{args.dataset}/*/best_model.pt')[0]
+        args.ckpt_path = glob.glob(f'ckpt/{args.dataset}/*/best_model.pt')[0]
         args.epochs = 0
     except: # Training from scratch
         print("Starting training...")
@@ -238,7 +238,7 @@ def main():
     
 
     if args.save_model:
-        final_model_path = os.path.join(model_folder_path, 'final_model.pt')
+        final_model_path = os.path.join(args.ckpt_path, 'final_model.pt')
         torch.save({
             'model_state_dict': model.state_dict(),
             'args': args,
