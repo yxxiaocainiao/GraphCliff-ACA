@@ -1,4 +1,5 @@
-# GraphCliff: GraphCliff: Short–Long Range Gating for Modeling Critical Activity Changes Caused by Subtle Molecular Differences
+# GraphCliff
+GraphCliff: Short–Long Range Gating for Modeling Critical Activity Changes Caused by Subtle Molecular Differences
 
 
 Reference implementation of **GraphCliff**, a graph neural network for activity
