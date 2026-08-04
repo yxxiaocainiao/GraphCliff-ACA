@@ -1,0 +1,11 @@
+# Training / analysis artifacts
+ckpt/
+analysis_out/
+wandb/
+*.pt
+*.pkl
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/

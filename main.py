@@ -89,6 +89,10 @@ def main():
     # Dataset arguments
     parser.add_argument('--dataset', type=str, default='CHEMBL204_Ki')
     parser.add_argument('--batch_size', type=int, default=128)
+    parser.add_argument('--valid_frac', type=float, default=0.1,
+                        help='Fraction of the official train split held out for model selection')
+    parser.add_argument('--split_seed', type=int, default=42,
+                        help='Seed for the deterministic train/valid split')
     # Training arguments
     parser.add_argument('--epochs', type=int, default=100)
     parser.add_argument('--lr', type=float, default=1e-4)
@@ -129,12 +133,17 @@ def main():
 
     collate_fn = lambda batch: collate_graphs(batch)
 
-    train_ds = GraphDataset(args.dataset, split="train")
-    train_loader = DataLoader(train_ds, batch_size=args.batch_size, 
+    split_kwargs = dict(valid_frac=args.valid_frac, split_seed=args.split_seed)
+    train_ds = GraphDataset(args.dataset, split="train", **split_kwargs)
+    train_loader = DataLoader(train_ds, batch_size=args.batch_size,
                               shuffle=True, collate_fn=collate_fn, num_workers=args.num_workers, worker_init_fn=seed_worker, generator=g, pin_memory=True)
+    valid_ds = GraphDataset(args.dataset, split="valid", **split_kwargs)
+    valid_loader = DataLoader(valid_ds, batch_size=args.batch_size,
+                              shuffle=False, collate_fn=collate_fn, num_workers=args.num_workers, worker_init_fn=seed_worker, generator=g)
     test_ds = GraphDataset(args.dataset, split="test")
-    test_loader = DataLoader(test_ds, batch_size=args.batch_size, 
+    test_loader = DataLoader(test_ds, batch_size=args.batch_size,
                              shuffle=False, collate_fn=collate_fn, num_workers=args.num_workers, worker_init_fn=seed_worker, generator=g)
+    print(f"Split sizes — train: {len(train_ds)}, valid: {len(valid_ds)}, test: {len(test_ds)}")
 
     sample = train_ds[0]
     atom_in_dim = sample.x.size(1)
@@ -185,29 +194,31 @@ def main():
         args.ckpt_path = f'ckpt/{args.dataset}/{timestamp}/best_model.pt'
         for epoch in range(1, args.epochs + 1):
             train_loss = train_one_epoch(model, train_loader, optimizer, device)
-            labels, preds = evaluate(model, test_loader, device)
-            
+            # Model selection and early stopping use the held-out validation
+            # split only; the test split is untouched until the final report.
+            labels, preds = evaluate(model, valid_loader, device)
+
             current_lr = scheduler.step(epoch)
-            
-            test_loss = F.mse_loss(torch.tensor(preds), torch.tensor(labels))
-            improved = (best_loss - test_loss) > args.min_delta
-            
+
+            valid_loss = F.mse_loss(torch.tensor(preds), torch.tensor(labels))
+            improved = (best_loss - valid_loss) > args.min_delta
+
             if improved:
-                best_loss = test_loss
+                best_loss = valid_loss
                 epochs_no_improve = 0
                 save_ckpt(model, args.ckpt_path)
-                print(f"Epoch {epoch:3d}: Train Loss={train_loss:.4f}, Test Loss={test_loss:.4f}, LR={current_lr:.2e} [BEST SAVED]")
+                print(f"Epoch {epoch:3d}: Train Loss={train_loss:.4f}, Valid Loss={valid_loss:.4f}, LR={current_lr:.2e} [BEST SAVED]")
             else:
                 epochs_no_improve += 1
-                print(f"Epoch {epoch:3d}: Train Loss={train_loss:.4f}, Test Loss={test_loss:.4f}, LR={current_lr:.2e} (no improve: {epochs_no_improve})")
-            
+                print(f"Epoch {epoch:3d}: Train Loss={train_loss:.4f}, Valid Loss={valid_loss:.4f}, LR={current_lr:.2e} (no improve: {epochs_no_improve})")
+
             # Early stopping
             if epochs_no_improve >= args.patience:
                 print(f"Early stopping at epoch {epoch} (patience: {args.patience})")
                 break
             if args.log_wandb:
                 wandb.log({"train_loss": train_loss,
-                           "test_loss": test_loss})
+                           "valid_loss": valid_loss})
 
     print(f"\nLoading best checkpoint: {args.ckpt_path}")
     try:
@@ -238,7 +249,7 @@ def main():
     
 
     if args.save_model:
-        final_model_path = os.path.join(args.ckpt_path, 'final_model.pt')
+        final_model_path = os.path.join(os.path.dirname(args.ckpt_path), 'final_model.pt')
         torch.save({
             'model_state_dict': model.state_dict(),
             'args': args,
