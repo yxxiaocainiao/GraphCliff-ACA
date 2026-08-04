@@ -1,4 +1,5 @@
-# GraphCliff: Short-Long Range Gating for Subtle Differences but Critical Changes
+# GraphCliff: GraphCliff: Short–Long Range Gating for Modeling Critical Activity Changes Caused by Subtle Molecular Differences
+
 
 Reference implementation of **GraphCliff**, a graph neural network for activity
 cliff prediction. Each filter layer runs a short-range edge-aware path (GINE) and
