@@ -1,5 +1,6 @@
 # Training / analysis artifacts
-ckpt/
+ckpt/*
+!ckpt/README.md
 analysis_out/
 wandb/
 *.pt

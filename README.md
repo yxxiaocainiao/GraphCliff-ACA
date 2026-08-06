@@ -1,6 +1,6 @@
 # GraphCliff
-GraphCliff: Short–Long Range Gating for Modeling Critical Activity Changes Caused by Subtle Molecular Differences
 
+GraphCliff: Short–Long Range Gating for Modeling Critical Activity Changes Caused by Subtle Molecular Differences
 
 Reference implementation of **GraphCliff**, a graph neural network for activity
 cliff prediction. Each filter layer runs a short-range edge-aware path (GINE) and
@@ -19,9 +19,10 @@ causes a large activity change.
 1. [Results](#results)
 2. [Environment Setup](#environment-setup)
 3. [Data](#data)
-4. [Training GraphCliff](#training-graphcliff)
-5. [Analysis](#analysis)
-6. [Repository Layout](#repository-layout)
+4. [Checkpoints](#checkpoints)
+5. [Training GraphCliff](#training-graphcliff)
+6. [Analysis](#analysis)
+7. [Repository Layout](#repository-layout)
 
 ## Results
 
@@ -78,6 +79,21 @@ holds out a fraction of the official training split as `valid`
 (`--valid_frac`, default 0.1; `--split_seed`, default 42), stratified on
 `cliff_mol` so the cliff ratio is preserved. Early stopping and checkpointing use
 `valid` only; `test` is touched once, for the final report.
+
+## Checkpoints
+
+The trained checkpoints for all 30 targets are hosted on Zenodo rather than in
+this repository: https://zenodo.org/records/21787497
+
+```bash
+wget https://zenodo.org/records/21787497/files/graphcliff_ckpt.tar.gz
+tar xzf graphcliff_ckpt.tar.gz
+mv 250920_final_ckpt/* ckpt/ && rmdir 250920_final_ckpt
+```
+
+Extracting them into `ckpt/` reproduces the reported numbers without retraining
+and lets the analysis scripts run directly. See [`ckpt/README.md`](ckpt/README.md)
+for the expected layout and the checksum.
 
 ## Training GraphCliff
 
@@ -182,6 +198,7 @@ python analysis/find_cliff_pair.py
 ├── run.sh                        multi-GPU launcher over all 30 targets
 ├── envs/graphcliff.yaml          conda environment
 ├── benchmark_data/               MoleculeACE CSVs (+ raw/ and metadata/)
+├── ckpt/                         checkpoints (downloaded from Zenodo, git-ignored)
 └── analysis/
     ├── oversmoothing.py          layer-wise MAD + Dirichlet energy
     ├── topk_gate_alignment.py    gate / non-MCS atom overlap
