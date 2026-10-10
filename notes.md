@@ -34,6 +34,8 @@
 - 本轮模型 forward、optimizer 步、训练、test 评价均为 0；未修改或移动用户权重。
 # 2026-10-10 ACA 接入与先导
 
+训练后重载发现新入口漏取 checkpoint 的 model_state_dict 外层；CHEMBL2047 MSE 完成 64 epochs、best=49，权重和历史有效。修复只影响重载，不改变训练/loss。recover 仅接收已满足终止条件的历史、校验划分/数据/模型与 loss 来源，恢复已完成 MSE 结果再从固定初始化训练后续两组；不续训部分 epoch、不重跑已完成拟合。恢复过程单独写 recovery.json，原始 provenance 不覆盖；恢复的 MSE 训练耗时记 null。
+
 确认旧 experiments/aca_pilot 不是未运行方案：仅 CHEMBL234 三种子共六次已完成，MSE+平方 L2 的 Cliff RMSE 平均恶化约 3.01%，旧队列暂停。新轮用 MAE+非平方 L1，固定官方 README 示例；保留普通 MAE 以辨别回归损失变化，全部重新初始化。
 
 ACANet 固定源码 4c43e602 的 clsar/model/loss.py 经官方 raw 在线下载核验 SHA256=ad7e1722383fb85693bfd821b0c5f32827f4cb2867c591865569c445c640df37，与复制的旧 vendor 文件一致。复用原定义而不改写公式。官方当前 HEAD 6274fa43 与固定源码不同，参数示例来源和实现来源分别记录。

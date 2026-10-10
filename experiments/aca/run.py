@@ -1,6 +1,7 @@
 """GPL-3.0 ACA pilot; upstream GraphCliff model and checkpoint files stay untouched."""
 import argparse
 import hashlib
+import io
 import json
 import subprocess
 import sys
@@ -102,6 +103,10 @@ def check():
         with torch.no_grad():
             plain = model(batch['x'].cuda(), batch['edge_index'].cuda(), batch['edge_attr'].cuda(), batch['batch'].cuda())
         assert torch.equal(hooked, plain), 'embedding hook changed predictions'
+        checkpoint = io.BytesIO()
+        torch.save({'model_state_dict': model.state_dict()}, checkpoint)
+        checkpoint.seek(0)
+        model.load_state_dict(torch.load(checkpoint, weights_only=True)['model_state_dict'])
         captured.clear()
         report['tasks'][task] = dict(train=len(tr), valid=len(va), valid_cliff=int(va.cliff_mol.sum()),
                                     candidates=loss[5], active=loss[6], loss=float(loss[0].detach()))
@@ -110,26 +115,43 @@ def check():
     save(OUT / 'preflight.json', report)
     print(json.dumps(report), flush=True)
 
-def run(task):
+def run(task, recover=False):
     tr, va, tg, vg = development(task)
     folder = OUT / task
-    folder.mkdir(parents=True, exist_ok=False)
-    save(folder / 'split.json', dict(train=tr.row_id.tolist(), valid=va.row_id.tolist(), test_labels_read=False))
+    folder.mkdir(parents=True, exist_ok=recover)
+    split = dict(train=tr.row_id.tolist(), valid=va.row_id.tolist(), test_labels_read=False)
+    if recover:
+        assert json.loads((folder/'split.json').read_text()) == split
+    else:
+        save(folder / 'split.json', split)
     source_files = ['model.py', 'dataset.py', 'dataset_utils.py', 'main.py', 'train.py',
                     'experiments/aca/run.py', 'experiments/aca/loss_adapter.py', 'experiments/aca/protocol.json']
-    save(folder / 'provenance.json', dict(
+    provenance = dict(
         git_head=subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
         git_status=subprocess.check_output(['git', 'status', '--porcelain'], cwd=ROOT, text=True),
         source_sha256={name: hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in source_files},
         data_sha256=hashlib.sha256((ROOT/'benchmark_data'/f'{task}.csv').read_bytes()).hexdigest(),
         protocol=json.loads((ROOT/'experiments/aca/protocol.json').read_text()),
         torch=torch.__version__, cuda=torch.version.cuda, device=torch.cuda.get_device_name(),
-        label_scale='y=-log10(nM), verified on training rows', pretrained_checkpoint_used=False))
+        label_scale='y=-log10(nM), verified on training rows', pretrained_checkpoint_used=False)
+    if recover:
+        original = json.loads((folder/'provenance.json').read_text())
+        assert original['protocol'] == provenance['protocol'] and original['data_sha256'] == provenance['data_sha256']
+        for name in ('model.py', 'dataset.py', 'dataset_utils.py', 'main.py', 'train.py', 'experiments/aca/loss_adapter.py'):
+            assert original['source_sha256'][name] == provenance['source_sha256'][name]
+        save(folder/'recovery.json', dict(reason='fix checkpoint envelope extraction; no training or loss changes', **provenance))
+    else:
+        save(folder/'provenance.json', provenance)
     initial = None
     for arm in ('mse', 'mae', 'aca'):
         start = time.time()
         destination = folder / arm
-        destination.mkdir()
+        if recover and (destination/'summary.json').exists():
+            result = json.loads((destination/'summary.json').read_text())
+            initial = initial or result['initial_sha256']
+            assert initial == result['initial_sha256']
+            continue
+        destination.mkdir(exist_ok=recover)
         model = model_new()
         digest = state_hash(model)
         initial = initial or digest
@@ -143,7 +165,11 @@ def run(task):
         scheduler = WarmupCosineScheduler(optimizer, 10, 100, 1e-4)
         aca = criterion()
         best, stale, history = float('inf'), 0, []
-        for epoch in range(100):
+        if recover and (destination/'history.json').exists():
+            history = json.loads((destination/'history.json').read_text())
+            best_epoch = min(history, key=lambda row: row['rmse'])['epoch']
+            assert len(history) == 100 or len(history)-best_epoch >= 15, 'unfinished training cannot be recovered by this entry'
+        for epoch in range(100 if history else 0, 100):
             model.train()
             reg_sum = triplet_sum = total_sum = count = candidates = active = empty = 0
             for batch in loader:
@@ -190,11 +216,12 @@ def run(task):
                 break
         if hook:
             hook.remove()
-        model.load_state_dict(torch.load(destination / 'best_model.pt', weights_only=True))
+        model.load_state_dict(torch.load(destination / 'best_model.pt', weights_only=True)['model_state_dict'])
         labels, predictions = evaluate(model, valid_loader, 'cuda')
         pd.DataFrame(dict(row_id=va.row_id, label=labels, prediction=predictions, cliff=va.cliff_mol)).to_csv(destination / 'valid_predictions.csv', index=False)
         result = dict(task=task, arm=arm, initial_sha256=digest, epochs=len(history), best_epoch=best_epoch,
-                      seconds=time.time()-start, train=len(tr), valid=len(va), valid_cliff=int(va.cliff_mol.sum()),
+                      training_seconds=None if recover and arm == 'mse' else time.time()-start,
+                      recovered=recover and arm == 'mse', train=len(tr), valid=len(va), valid_cliff=int(va.cliff_mol.sum()),
                       **metrics(labels, predictions, va.cliff_mol))
         save(destination / 'summary.json', result)
         print('FINISHED ' + json.dumps(result), flush=True)
@@ -212,7 +239,7 @@ def audit():
             result = json.loads((path/'summary.json').read_text(encoding='utf-8'))
             hashes.add(result['initial_sha256'])
             model = model_new()
-            model.load_state_dict(torch.load(path/'best_model.pt', weights_only=True))
+            model.load_state_dict(torch.load(path/'best_model.pt', weights_only=True)['model_state_dict'])
             labels, predictions = evaluate(model, loader, 'cuda')
             stored = pd.read_csv(path/'valid_predictions.csv')
             assert stored.row_id.tolist() == va.row_id.tolist()
@@ -231,7 +258,7 @@ def audit():
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('action', choices=['check', 'run', 'audit'])
+    parser.add_argument('action', choices=['check', 'run', 'recover', 'audit'])
     parser.add_argument('--task', choices=TASKS)
     args = parser.parse_args()
     torch.set_num_threads(4)
@@ -241,4 +268,4 @@ if __name__ == '__main__':
         audit()
     else:
         assert args.task
-        run(args.task)
+        run(args.task, recover=args.action == 'recover')
