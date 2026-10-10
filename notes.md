@@ -1,5 +1,11 @@
 # 来源与范围核对
 
+## 2026-10-10：公开发布授权与核验
+
+用户明确要求将本方向单独发布为公开 GitHub 仓库。目标为 https://github.com/yxxiaocainiao/GraphCliff-ACA，origin 已配置至该用户仓库；upstream 仍指原作者，未向 upstream 写入。默认分支 codex/graphcliff-aca，不合并其他项目。
+
+发布前补齐官方 shallow 历史：共12个待推送提交，137个当前跟踪文件，历史最大 blob=4,822,725 bytes。当前文件与完整历史凭据模式扫描无匹配；训练权重、artifacts 日志、邻近旧项目均排除。MIT 原许可和 ACA GPL-3.0 源码许可保留。首次推送916e715后已验证 GitHub visibility=PUBLIC；最终说明提交后再次核验本地/远端 SHA 与递归文件树。
+
 ## 2026-10-10：独立仓库建立
 
 - 来源：`https://github.com/dmis-lab/GraphCliff.git`，通过 `git clone --depth 1 --origin upstream` 获取。

@@ -2,6 +2,8 @@
 
 建立日期：2026-10-10（Asia/Shanghai）。
 
+公开仓库：<https://github.com/yxxiaocainiao/GraphCliff-ACA>，默认分支 `codex/graphcliff-aca`。用户明确授权后独立发布，保留原作者来源与许可；权重和 artifacts 运行日志仅存本地。根 README.md 为原作者文档，本文件与阶段报告描述此仓库的 ACA 试验。
+
 **目的：在原 GraphCliff 单分子回归模型上，检验 ACANet 的监督式三元组学习能否改善活性预测，特别是 Cliff RMSE。**
 
 ACA 已接入并通过公式、零权重、空三元组、CUDA 前后向、hook 预测一致性与 checkpoint 格式检查。2026-10-10 固定六次先导及独立重载核验全部完成：两个任务的 ACA 在 Overall/Cliff RMSE 上都落后于匹配 MAE 对照，暂停扩大当前直接迁移配方。详细指标、曲线和诊断见 [阶段报告](docs/aca_pilot_20261010/report.md)。这是固定配方的负结果，不能推断所有对比学习无效；ACA 移植不是原创主方法。

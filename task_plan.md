@@ -4,8 +4,8 @@
 
 - [x] 核对本仓库干净分支、登录账号及上传范围：仅 GraphCliff-ACA 原始基线、ACA 代码与阶段证据；权重、artifacts 日志与旧项目排除。
 - [x] 扫描当前文件及待推送历史中的凭据、大文件，保留 MIT/GPL 来源；补齐 shallow 来源历史以正常推送。12 个提交，137 个当前文件，历史最大 blob=4,822,725 bytes，凭据模式扫描无匹配。
-- [ ] 创建 yxxiaocainiao/GraphCliff-ACA 公开仓库，推送本方向分支，不合并其他项目。
-- [ ] 核对 GitHub PUBLIC、默认分支、远端 SHA 与文件树。
+- [x] 创建 yxxiaocainiao/GraphCliff-ACA 公开仓库，推送本方向分支，不合并其他项目。
+- [x] 核对 GitHub PUBLIC、默认分支 codex/graphcliff-aca、远端 SHA 与文件树；初次推送 SHA=916e715，最终说明提交后再次核验。
 
 ## 当前请求
 

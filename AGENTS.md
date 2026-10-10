@@ -11,4 +11,4 @@
 - Mine triplets using training molecules and labels within the same task only. Select hyperparameters and checkpoints using development validation; keep official test labels out of training, mining, and tuning.
 - Separate regression-loss changes from triplet-loss changes. Record effective triplet counts, loss terms, label scale, source hashes, configurations, and seed/split identities.
 - Define a bounded pilot before training. Creating this repository does not execute or validate ACA, and does not restart any previous experiment queue.
-- All writable outputs belong in this repository. No writable links to other projects. Do not push to the authors' upstream repository; there is no user-owned GitHub destination configured.
+- All writable outputs belong in this repository. No writable links to other projects. Never push to the authors' upstream repository. The user authorized public publication to origin https://github.com/yxxiaocainiao/GraphCliff-ACA; retain this task's scope and exclude local checkpoints/runtime artifacts.
