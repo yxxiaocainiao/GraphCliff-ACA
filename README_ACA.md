@@ -6,6 +6,8 @@
 
 当前仅完成仓库隔离与干净基线导入。ACA 尚未接入，未运行训练，也没有本项目的效果结论。
 
+用户已提供 30 个 GraphCliff checkpoint。全部通过当前默认模型的 strict 加载和有限值检查；核验记录见 `docs/checkpoint_audit_20261010.json`。现有 `main.py` 会在发现权重时跳过训练并评价 test，后续 ACA 将使用独立入口，保留这些权重原样。加载兼容不代表训练划分或官方来源已验证。
+
 ## 来源与目录
 
 - 本地仓库：`D:/GraphCliff-ACA`，分支 `codex/graphcliff-aca`。

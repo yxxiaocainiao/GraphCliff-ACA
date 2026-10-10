@@ -21,3 +21,14 @@
 2. 官方实现的 MSE 选项是否同时改变 embedding 距离定义，如何清楚区分移植配方与最小控制变量试验？
 3. 当前 batch/任务的有效三元组覆盖是否足够？
 4. 未来变体相对 ACA/PrismNet 的新意是什么？尚未确认，先做 ACA 对照。
+
+## 2026-10-10：用户提供 checkpoint 核验
+
+- 位置：`ckpt/<CHEMBL任务>/<时间戳>/best_model.pt`，30 个独立任务各 1 个，合计 723,320,700 bytes。
+- 30/30 均能通过 `torch.load(map_location='cpu', weights_only=True)` 加载；封装仅包含 `model_state_dict`。
+- 30/30 均可 strict 加载至当前 GraphCliffRegressor(38,13,H256,3 layers,4 groups,K3)，默认模型参数数 6,021,198；所有 state tensor 均为有限值。
+- 各任务均有本仓库 benchmark_data 中的对应 CSV。这里只枚举文件名，没有读取训练或测试标签。
+- 已记录文件级 SHA256 与形状兼容性结果：`docs/checkpoint_audit_20261010.json`。未核验官方逐文件哈希或这些权重的实际训练划分，布局兼容不等于来源/评价协议已证明。
+- 当前 main.py 检测到 `ckpt/<dataset>/*/best_model.pt` 后设置 epochs=0，随后执行官方 test 评价。后续 ACA 应使用单独训练入口和输出位置，防止误加载现有权重后跳过新训练。
+- 这些 checkpoint 可用于加载兼容检查和明确标记的历史模型分析。正式 ACA 对照应同初始化、同 train/validation 划分重训；若设计微调实验，需先核验权重训练划分，并让两臂从同一合法权重起点出发。
+- 本轮模型 forward、optimizer 步、训练、test 评价均为 0；未修改或移动用户权重。

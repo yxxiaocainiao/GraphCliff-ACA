@@ -1,0 +1,260 @@
+{
+  "date": "2026-10-10",
+  "checkpoint_count": 30,
+  "total_bytes": 723320700,
+  "default_parameter_count": 6021198,
+  "config": {
+    "atom_in_dim": 38,
+    "edge_dim": 13,
+    "hidden_size": 256,
+    "num_layers": 3,
+    "groups": 4,
+    "mid_K": 3
+  },
+  "all_tasks_have_csv": true,
+  "method": "weights_only CPU load, strict default state_dict load, finite tensor checks, file SHA256; no forward or label read",
+  "upstream_file_hash_verified": false,
+  "training_split_provenance_verified": false,
+  "records": [
+    {
+      "task": "CHEMBL1862_Ki",
+      "path": "ckpt/CHEMBL1862_Ki/20250920_020338/best_model.pt",
+      "bytes": 24110690,
+      "sha256": "fcabc5f92cf581764bdeffa9eeff0110e80c7c180bb155a578609840514c6e66",
+      "state_tensors": 67,
+      "strict_load": true
+    },
+    {
+      "task": "CHEMBL1871_Ki",
+      "path": "ckpt/CHEMBL1871_Ki/20250920_020317/best_model.pt",
+      "bytes": 24110690,
+      "sha256": "4ff99cba919a55d5907703bdd80b1b20f9b949264f39e917d268f79209879bc7",
+      "state_tensors": 67,
+      "strict_load": true
+    },
+    {
+      "task": "CHEMBL2034_Ki",
+      "path": "ckpt/CHEMBL2034_Ki/20250920_015011/best_model.pt",
+      "bytes": 24110690,
+      "sha256": "e2ed8d123f22350ccf0dd69eee26336faf15fb5c0832c97e514753a565233624",
+      "state_tensors": 67,
+      "strict_load": true
+    },
+    {
+      "task": "CHEMBL2047_EC50",
+      "path": "ckpt/CHEMBL2047_EC50/20250920_020323/best_model.pt",
+      "bytes": 24110690,
+      "sha256": "223d289529889e3b1593812d3aaf9edd2f34c718d79d3bdc42b2f9282580ff4f",
+      "state_tensors": 67,
+      "strict_load": true
+    },
+    {
+      "task": "CHEMBL204_Ki",
+      "path": "ckpt/CHEMBL204_Ki/20250920_020332/best_model.pt",
+      "bytes": 24110690,
+      "sha256": "b0415d7dd53c4c998ecffed35fa9d2a832d71faaf9d9325996ba846981d33d1c",
+      "state_tensors": 67,
+      "strict_load": true
+    },
+    {
+      "task": "CHEMBL2147_Ki",
+      "path": "ckpt/CHEMBL2147_Ki/20250920_015533/best_model.pt",
+      "bytes": 24110690,
+      "sha256": "061ac869308b6360cb16a42773f6e02245578f9f0ce57c3692debfb02597b9ca",
+      "state_tensors": 67,
+      "strict_load": true
+    },
+    {
+      "task": "CHEMBL214_Ki",
+      "path": "ckpt/CHEMBL214_Ki/20250920_020335/best_model.pt",
+      "bytes": 24110690,
+      "sha256": "0c6e89731114a758aa4800fef50249d83a09183afe50815ae0da68bce9efa29f",
+      "state_tensors": 67,
+      "strict_load": true
+    },
+    {
+      "task": "CHEMBL218_EC50",
+      "path": "ckpt/CHEMBL218_EC50/20250920_015024/best_model.pt",
+      "bytes": 24110690,
+      "sha256": "f69e7f2b7ea00717e9ac09ad48f32b24dc7bb77804f759005235ddb1e04d1f26",
+      "state_tensors": 67,
+      "strict_load": true
+    },
+    {
+      "task": "CHEMBL219_Ki",
+      "path": "ckpt/CHEMBL219_Ki/20250920_015528/best_model.pt",
+      "bytes": 24110690,
+      "sha256": "9b290da5d64d15fcde394ad2a9d57e009284c25cf67caeb8970dddb2ea6b48f4",
+      "state_tensors": 67,
+      "strict_load": true
+    },
+    {
+      "task": "CHEMBL228_Ki",
+      "path": "ckpt/CHEMBL228_Ki/20250920_020955/best_model.pt",
+      "bytes": 24110690,
+      "sha256": "b7a58c88cf63665ef2ade8e2aad51f7fe43c2d2f80a23c453fa776eade1693d3",
+      "state_tensors": 67,
+      "strict_load": true
+    },
+    {
+      "task": "CHEMBL231_Ki",
+      "path": "ckpt/CHEMBL231_Ki/20250920_015537/best_model.pt",
+      "bytes": 24110690,
+      "sha256": "ab220d17f859cdd4b079f213b68408d548988eebf57fc2c08fdd7ddb55d6873d",
+      "state_tensors": 67,
+      "strict_load": true
+    },
+    {
+      "task": "CHEMBL233_Ki",
+      "path": "ckpt/CHEMBL233_Ki/20250920_015014/best_model.pt",
+      "bytes": 24110690,
+      "sha256": "a8232121abb2c4bf285578c43bb6d72015f1007ada88ee0250e2b5e2f386c6e1",
+      "state_tensors": 67,
+      "strict_load": true
+    },
+    {
+      "task": "CHEMBL234_Ki",
+      "path": "ckpt/CHEMBL234_Ki/20250920_020940/best_model.pt",
+      "bytes": 24110690,
+      "sha256": "1f0288359ea60d7bde330b45ffc8ad7e6c0cbf9a78ff7d0a1c6db6d7f56a6fde",
+      "state_tensors": 67,
+      "strict_load": true
+    },
+    {
+      "task": "CHEMBL235_EC50",
+      "path": "ckpt/CHEMBL235_EC50/20250920_020946/best_model.pt",
+      "bytes": 24110690,
+      "sha256": "8cb2e44ff25cc4cc4e4a20bac564ab5291eeb7fab1bed9dba11d8af4b2838509",
+      "state_tensors": 67,
+      "strict_load": true
+    },
+    {
+      "task": "CHEMBL236_Ki",
+      "path": "ckpt/CHEMBL236_Ki/20250920_020952/best_model.pt",
+      "bytes": 24110690,
+      "sha256": "d5797e5dd021dfb0e5cd262fcac9752c50bf7bcd2b2a20c05785600d4b7c7f66",
+      "state_tensors": 67,
+      "strict_load": true
+    },
+    {
+      "task": "CHEMBL237_EC50",
+      "path": "ckpt/CHEMBL237_EC50/20250920_015543/best_model.pt",
+      "bytes": 24110690,
+      "sha256": "f30f4fcd6b3f448cbdc52afdceac94b6a286d2d1a11932ff62a732e71efaf645",
+      "state_tensors": 67,
+      "strict_load": true
+    },
+    {
+      "task": "CHEMBL237_Ki",
+      "path": "ckpt/CHEMBL237_Ki/20250920_015005/best_model.pt",
+      "bytes": 24110690,
+      "sha256": "cda9a0a2acff9e8b620d090051c6cd0ca33b9e72818c264057d8527700600d99",
+      "state_tensors": 67,
+      "strict_load": true
+    },
+    {
+      "task": "CHEMBL238_Ki",
+      "path": "ckpt/CHEMBL238_Ki/20250920_020942/best_model.pt",
+      "bytes": 24110690,
+      "sha256": "761c39da6861493a3a13e78ab6e61b7701843ffc52aa3198036d77fd8b578e4c",
+      "state_tensors": 67,
+      "strict_load": true
+    },
+    {
+      "task": "CHEMBL239_EC50",
+      "path": "ckpt/CHEMBL239_EC50/20250920_020326/best_model.pt",
+      "bytes": 24110690,
+      "sha256": "fe4b2ed88370a72751e9223c6e9a7dcc397db150b2902912bd6fc769e3d2a521",
+      "state_tensors": 67,
+      "strict_load": true
+    },
+    {
+      "task": "CHEMBL244_Ki",
+      "path": "ckpt/CHEMBL244_Ki/20250920_015546/best_model.pt",
+      "bytes": 24110690,
+      "sha256": "18d6da8eab6c0b61f073e93a7c1ed15c3b208e68de4e7f9b5fcd1506d37db44a",
+      "state_tensors": 67,
+      "strict_load": true
+    },
+    {
+      "task": "CHEMBL262_Ki",
+      "path": "ckpt/CHEMBL262_Ki/20250920_020320/best_model.pt",
+      "bytes": 24110690,
+      "sha256": "9dda6defc8b8a7b3d514fa4399c1d4433e9d3f863a1f23f95c6f27b304792158",
+      "state_tensors": 67,
+      "strict_load": true
+    },
+    {
+      "task": "CHEMBL264_Ki",
+      "path": "ckpt/CHEMBL264_Ki/20250920_015027/best_model.pt",
+      "bytes": 24110690,
+      "sha256": "44949e3fd3432e11db38c14efa0c9699eb84ceb31936a12ee24fe1815b2a6ffc",
+      "state_tensors": 67,
+      "strict_load": true
+    },
+    {
+      "task": "CHEMBL2835_Ki",
+      "path": "ckpt/CHEMBL2835_Ki/20250920_015531/best_model.pt",
+      "bytes": 24110690,
+      "sha256": "11eb9620da09b9bdde7525f4d9cfddeaf1af7da02f2766edf1b3428e884de0d6",
+      "state_tensors": 67,
+      "strict_load": true
+    },
+    {
+      "task": "CHEMBL287_Ki",
+      "path": "ckpt/CHEMBL287_Ki/20250920_015021/best_model.pt",
+      "bytes": 24110690,
+      "sha256": "1793de9c182d9da0733b6e976a03f73f7fce2a4171ccb3afc65712a68f9beae1",
+      "state_tensors": 67,
+      "strict_load": true
+    },
+    {
+      "task": "CHEMBL2971_Ki",
+      "path": "ckpt/CHEMBL2971_Ki/20250920_020329/best_model.pt",
+      "bytes": 24110690,
+      "sha256": "74b8ea4d4bdf114c382482f2e9ef974b21749a0cfdf3456d0df537f3031f9581",
+      "state_tensors": 67,
+      "strict_load": true
+    },
+    {
+      "task": "CHEMBL3979_EC50",
+      "path": "ckpt/CHEMBL3979_EC50/20250920_015540/best_model.pt",
+      "bytes": 24110690,
+      "sha256": "ec8b2b098c1899bf5fb17633d97946ca2251ef631e48332a6a87ceec91e7fc7a",
+      "state_tensors": 67,
+      "strict_load": true
+    },
+    {
+      "task": "CHEMBL4005_Ki",
+      "path": "ckpt/CHEMBL4005_Ki/20250920_020949/best_model.pt",
+      "bytes": 24110690,
+      "sha256": "bd707b6ef1858a2d6bc134bfd2c4feb31cee4fa835a8ad6194065fe491d53a35",
+      "state_tensors": 67,
+      "strict_load": true
+    },
+    {
+      "task": "CHEMBL4203_Ki",
+      "path": "ckpt/CHEMBL4203_Ki/20250920_015008/best_model.pt",
+      "bytes": 24110690,
+      "sha256": "c25717b78c8bf6fe15ebe66833ff579a73234bfbc9bd3b90be1ee5842bd25af0",
+      "state_tensors": 67,
+      "strict_load": true
+    },
+    {
+      "task": "CHEMBL4616_EC50",
+      "path": "ckpt/CHEMBL4616_EC50/20250920_015018/best_model.pt",
+      "bytes": 24110690,
+      "sha256": "4e4c388828acde88f1489021b95ff9ca88d2b1e94a81ecd6dbebcba413c98e0d",
+      "state_tensors": 67,
+      "strict_load": true
+    },
+    {
+      "task": "CHEMBL4792_Ki",
+      "path": "ckpt/CHEMBL4792_Ki/20250920_015549/best_model.pt",
+      "bytes": 24110690,
+      "sha256": "78b85c28e2141acc531a7526c12b9b1afc46fa33b8d2a24f76fd78781f4d8cf9",
+      "state_tensors": 67,
+      "strict_load": true
+    }
+  ]
+}

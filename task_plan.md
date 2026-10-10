@@ -6,6 +6,7 @@
 
 ## 阶段与检查点
 
+- [x] P0 核验用户新增的 30 个 checkpoint：CPU weights_only 加载、默认模型 strict state_dict 加载、有限值与 SHA256 检查全部通过；每个任务有对应 CSV。仅记录，不运行推理或测试集评价。
 - [x] P0 只读核对旧项目 Git 分支、提交、未提交路径及归属说明。
 - [x] P0 在不存在的新路径 `D:/GraphCliff-ACA` 从官方 GraphCliff 独立克隆，建立 `codex/graphcliff-aca` 分支。
 - [x] P0 记录来源 SHA、项目边界和后续实验范围，保留原作者文档与许可。
