@@ -57,3 +57,6 @@
 ACANet 固定源码 4c43e602 的 clsar/model/loss.py 经官方 raw 在线下载核验 SHA256=ad7e1722383fb85693bfd821b0c5f32827f4cb2867c591865569c445c640df37，与复制的旧 vendor 文件一致。复用原定义而不改写公式。官方当前 HEAD 6274fa43 与固定源码不同，参数示例来源和实现来源分别记录。
 
 第一轮预检通过公式与梯度：两候选三元组的 hinge 均值=1.55；alpha=0 等于 MAE 值和预测梯度；空候选为零对比项。真实 CUDA 批次均有限，CHEMBL234 train/valid=2632/292，valid cliff=128；CHEMBL2047=452/51，valid cliff=20。训练标签均符合 -log10(nM)，train/valid 无 canonical SMILES 交集。提供的 30 个 checkpoint 本轮不用于初始化。
+
+## 路线 A 固定先导
+输入为 benchmark_data 两任务官方train；Morgan radius2/2048，无手性。复用原 pooling 后512维接口及ACA开发划分工具，不使用ACA loss或采样。graph/fp/concat/gate四组；细节、预算和归因边界见 experiments/route_a/task_plan.md。原代码和旧实验保留；tools/已有未跟踪CUDA诊断不改。expression-skill/planning-with-files 搜索未找到，使用仓库现有计划文件约定。

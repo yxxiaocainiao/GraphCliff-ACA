@@ -48,3 +48,6 @@
 预检完成，训练源码冻结提交为 1cf5643；两个任务各三组已启动。vendor 源码保留原作者空白字符，diff --check 的 vendor 提示属原样复制；新增代码通过检查。.gitattributes 为 vendor 禁止行尾转换，确保 Windows 重新检出仍能通过固定 SHA 校验。
 
 六次已完成（54/92/89、64/35/82 epochs）。独立重载与 CSV 标准库重算指标通过。ACA 比 MAE 的 Cliff RMSE 在 CHEMBL234/2047 分别恶化 9.69%/5.58%，Overall 也均恶化。阶段决策：暂停扩大当前直接迁移配方，不自动追加种子、任务或调参；保留基线与负结果。若继续研究，优先诊断损失尺度和训练三元组的结构局部性，另冻结单机制试验后再改变体。完整阶段报告在 docs/aca_pilot_20261010/report.md。
+
+## 路线 A（2026-10-10）
+用户授权图-指纹融合固定先导；独立分支 codex/route-a-fusion-20261010。执行计划见 experiments/route_a/task_plan.md，两任务四组共8次，不自动扩大或发布。
