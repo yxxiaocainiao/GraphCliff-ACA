@@ -1,5 +1,9 @@
 # GraphCliff + ACA 计划
 
+## 后续结构/投影核验
+
+用户给出最小修复建议后，另开 codex/aca-structure-projection-20261010；执行范围和预算固定在 experiments/aca_local/task_plan.md。只做 CHEMBL234 四组，不覆盖原先导，不把机制推测当作已证实原因；新提交暂不自动推送。
+
 ## 公开发布（用户本轮明确授权）
 
 - [x] 核对本仓库干净分支、登录账号及上传范围：仅 GraphCliff-ACA 原始基线、ACA 代码与阶段证据；权重、artifacts 日志与旧项目排除。
