@@ -1,0 +1,60 @@
+[
+  {
+    "task": "CHEMBL234_Ki",
+    "first": {
+      "epoch": 1,
+      "reg": 1.0062019276039216,
+      "triplet": 7.396680367609491,
+      "loss": 1.7458699726043863,
+      "candidates": 121311,
+      "active": 57182,
+      "empty_batches": 0,
+      "lr": 0.0001,
+      "rmse": 1.1731574764435662,
+      "cliff_rmse": 1.127413870864568
+    },
+    "last": {
+      "epoch": 89,
+      "reg": 0.33413441846073577,
+      "triplet": 0.8176595811423559,
+      "loss": 0.41590038059692613,
+      "candidates": 120720,
+      "active": 47537,
+      "empty_batches": 0,
+      "lr": 6.009694708191242e-06,
+      "rmse": 0.6442909808933148,
+      "cliff_rmse": 0.6924167636287529
+    },
+    "total_candidate_occurrences": 10712205,
+    "total_active_occurrences": 4668816
+  },
+  {
+    "task": "CHEMBL2047_EC50",
+    "first": {
+      "epoch": 1,
+      "reg": 1.3767880707715465,
+      "triplet": 24.048467382920528,
+      "loss": 3.7816348698286886,
+      "candidates": 20059,
+      "active": 9383,
+      "empty_batches": 1,
+      "lr": 0.0001,
+      "rmse": 0.7757559291817314,
+      "cliff_rmse": 0.8077429941254478
+    },
+    "last": {
+      "epoch": 82,
+      "reg": 0.3530787298109679,
+      "triplet": 1.4836587061924218,
+      "loss": 0.5014446008521899,
+      "candidates": 22328,
+      "active": 6202,
+      "empty_batches": 1,
+      "lr": 1.2580800065610596e-05,
+      "rmse": 0.5766500450307666,
+      "cliff_rmse": 0.6878414778125159
+    },
+    "total_candidate_occurrences": 1700107,
+    "total_active_occurrences": 598355
+  }
+]

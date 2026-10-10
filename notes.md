@@ -34,6 +34,10 @@
 - 本轮模型 forward、optimizer 步、训练、test 评价均为 0；未修改或移动用户权重。
 # 2026-10-10 ACA 接入与先导
 
+六次拟合与独立核验完成。Cliff RMSE（MSE / MAE / ACA）：CHEMBL234=.622703/.632913/.694268；CHEMBL2047=.515139/.565489/.597020。ACA 相对 MAE 的 Cliff 恶化9.69%/5.58%，Overall 恶化12.15%/3.38%。两任务每个 ACA epoch 均有候选，回归与三元组 loss 均下降，但没有验证收益。仅单种子先导，暂停扩大该直接配方，不宣称所有监督对比学习无效。
+
+六个重载预测最大误差 <1e-5（实际浮点舍入约1e-15），行 ID、标签和指标均匹配；报告入口另用 math.fsum 从 CSV 重算两种 RMSE。当前 graphcliff 环境无 sklearn，未安装新依赖。30 个用户 checkpoint 对初始审计 SHA 复核全未变；原模型/数据代码无改动。阶段证据与图保存在 docs/aca_pilot_20261010，完整权重和日志在 artifacts，均属于本仓库。
+
 训练后重载发现新入口漏取 checkpoint 的 model_state_dict 外层；CHEMBL2047 MSE 完成 64 epochs、best=49，权重和历史有效。修复只影响重载，不改变训练/loss。recover 仅接收已满足终止条件的历史、校验划分/数据/模型与 loss 来源，恢复已完成 MSE 结果再从固定初始化训练后续两组；不续训部分 epoch、不重跑已完成拟合。恢复过程单独写 recovery.json，原始 provenance 不覆盖；恢复的 MSE 训练耗时记 null。
 
 确认旧 experiments/aca_pilot 不是未运行方案：仅 CHEMBL234 三种子共六次已完成，MSE+平方 L2 的 Cliff RMSE 平均恶化约 3.01%，旧队列暂停。新轮用 MAE+非平方 L1，固定官方 README 示例；保留普通 MAE 以辨别回归损失变化，全部重新初始化。

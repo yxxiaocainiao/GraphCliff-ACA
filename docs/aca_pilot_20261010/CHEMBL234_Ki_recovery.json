@@ -1,0 +1,65 @@
+{
+  "reason": "fix checkpoint envelope extraction; no training or loss changes",
+  "git_head": "0954abfd2171e1dd56adbf02b916e105756b31bb",
+  "git_status": "",
+  "source_sha256": {
+    "model.py": "7e1de8c890dee7275410041456313dae27ec7add829e8f5f741a385deac1a6d6",
+    "dataset.py": "466ff02d228d897725e9798f5d8e3ac04055c5310f1b2df14db9917ef7b02117",
+    "dataset_utils.py": "49038a72914647412b183acafcaca03041fd17256233466fa9c9b438ffbea95f",
+    "main.py": "fae1d1086d1441b59b8dc3cddfb1c318ba31b153c7af4ff1fc24fc48db448166",
+    "train.py": "d7134d266b3627a14fb6c49434f380df0402c4728518f77e45346e975124071b",
+    "experiments/aca/run.py": "da9fadd5776927b7c011dfb61532c8447f633333dbfa5bfc1147cb9f24de1900",
+    "experiments/aca/loss_adapter.py": "44fad45a0b939da9902f856ac2d54fe374ea728450265052f1d3756d701a9c68",
+    "experiments/aca/protocol.json": "b616ab2d6388969b62fe45a2d846486dcb94893c65a392e208e9b1397f308831"
+  },
+  "data_sha256": "ca8c6bb3c4081c7084439f0e111292d13ef18e117895c65e6ad7f3f2ee4765e8",
+  "protocol": {
+    "tasks": [
+      "CHEMBL234_Ki",
+      "CHEMBL2047_EC50"
+    ],
+    "arms": [
+      "mse",
+      "mae",
+      "aca"
+    ],
+    "seed": 42,
+    "split_seed": 42,
+    "valid_frac": 0.1,
+    "hidden_size": 256,
+    "num_layers": 3,
+    "groups": 4,
+    "mid_K": 3,
+    "dropout": 0,
+    "batch_size": 32,
+    "lr": 0.0001,
+    "weight_decay": 1e-05,
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "grad_clip": 1,
+    "epochs": 100,
+    "warmup": 10,
+    "min_lr": 1e-06,
+    "patience": 15,
+    "min_delta": 0,
+    "selection": "validation overall MSE",
+    "aca": {
+      "alpha": 0.1,
+      "cliff_lower": 0.2,
+      "cliff_upper": 1.0,
+      "p": 1,
+      "squared": false,
+      "similarity_gate": false
+    },
+    "parameter_source": "https://github.com/shenwanxiang/ACANet/blob/6274fa4307ce365a814ac5e93460f0afabaea200/README.md",
+    "loss_source_commit": "4c43e6024345d0ec4d40fdc88ad57224c898b6da",
+    "scope": "fixed README-example transfer, no alphaCV or hyperparameter search, no official test evaluation"
+  },
+  "torch": "2.7.1+cu128",
+  "cuda": "12.8",
+  "device": "NVIDIA GeForce RTX 5060 Laptop GPU",
+  "label_scale": "y=-log10(nM), verified on training rows",
+  "pretrained_checkpoint_used": false
+}

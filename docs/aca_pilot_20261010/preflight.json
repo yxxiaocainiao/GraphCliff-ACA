@@ -1,0 +1,21 @@
+{
+  "synthetic": "passed",
+  "tasks": {
+    "CHEMBL234_Ki": {
+      "train": 2632,
+      "valid": 292,
+      "valid_cliff": 128,
+      "candidates": 1284,
+      "active": 618,
+      "loss": 4.074152946472168
+    },
+    "CHEMBL2047_EC50": {
+      "train": 452,
+      "valid": 51,
+      "valid_cliff": 20,
+      "candidates": 1860,
+      "active": 465,
+      "loss": 6.626018524169922
+    }
+  }
+}

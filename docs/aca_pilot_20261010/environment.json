@@ -1,0 +1,14 @@
+{
+  "python": "3.10.21 | packaged by Anaconda, Inc. | (main, Aug 27 2026, 14:35:39) [MSC v.1942 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "packages": {
+    "torch": "2.7.1+cu128",
+    "torch-geometric": "2.6.1",
+    "numpy": "2.0.1",
+    "pandas": "2.3.2",
+    "rdkit": "2025.3.6",
+    "scikit-learn": "distribution metadata unavailable",
+    "matplotlib": "3.10.8",
+    "wandb": "0.22.0"
+  }
+}
