@@ -32,3 +32,10 @@
 - 当前 main.py 检测到 `ckpt/<dataset>/*/best_model.pt` 后设置 epochs=0，随后执行官方 test 评价。后续 ACA 应使用单独训练入口和输出位置，防止误加载现有权重后跳过新训练。
 - 这些 checkpoint 可用于加载兼容检查和明确标记的历史模型分析。正式 ACA 对照应同初始化、同 train/validation 划分重训；若设计微调实验，需先核验权重训练划分，并让两臂从同一合法权重起点出发。
 - 本轮模型 forward、optimizer 步、训练、test 评价均为 0；未修改或移动用户权重。
+# 2026-10-10 ACA 接入与先导
+
+确认旧 experiments/aca_pilot 不是未运行方案：仅 CHEMBL234 三种子共六次已完成，MSE+平方 L2 的 Cliff RMSE 平均恶化约 3.01%，旧队列暂停。新轮用 MAE+非平方 L1，固定官方 README 示例；保留普通 MAE 以辨别回归损失变化，全部重新初始化。
+
+ACANet 固定源码 4c43e602 的 clsar/model/loss.py 经官方 raw 在线下载核验 SHA256=ad7e1722383fb85693bfd821b0c5f32827f4cb2867c591865569c445c640df37，与复制的旧 vendor 文件一致。复用原定义而不改写公式。官方当前 HEAD 6274fa43 与固定源码不同，参数示例来源和实现来源分别记录。
+
+第一轮预检通过公式与梯度：两候选三元组的 hinge 均值=1.55；alpha=0 等于 MAE 值和预测梯度；空候选为零对比项。真实 CUDA 批次均有限，CHEMBL234 train/valid=2632/292，valid cliff=128；CHEMBL2047=452/51，valid cliff=20。训练标签均符合 -log10(nM)，train/valid 无 canonical SMILES 交集。提供的 30 个 checkpoint 本轮不用于初始化。

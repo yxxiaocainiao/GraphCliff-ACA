@@ -10,3 +10,4 @@ wandb/
 __pycache__/
 *.py[cod]
 .ipynb_checkpoints/
+artifacts/
