@@ -61,3 +61,6 @@ ACANet 固定源码 4c43e602 的 clsar/model/loss.py 经官方 raw 在线下载�
 ## 路线 A 固定先导
 输入为 benchmark_data 两任务官方train；Morgan radius2/2048，无手性。复用原 pooling 后512维接口及ACA开发划分工具，不使用ACA loss或采样。graph/fp/concat/gate四组；细节、预算和归因边界见 experiments/route_a/task_plan.md。原代码和旧实验保留；tools/已有未跟踪CUDA诊断不改。expression-skill/planning-with-files 搜索未找到，使用仓库现有计划文件约定。
 路线A完成：234 graph/gate Overall=.585909/.623614、Cliff=.619991/.644121；2047 graph/gate=.433690/.439782、.459170/.465828。2047 concat=.409269/.375809（比graph改善5.63%/18.15%）；234 concat=.633122/.661596，均退步。8组重载预测最大差8.9e-16，标准库复算和源码/数据hash通过。暂停扩大门控，未执行多种子或test，未推送。
+
+## 路线A机制解释审计
+旧best19/26实际停34/41；指纹是bit而非count；gate额外157万包含fp105万和gate52万；gate在234优于concat。此前结果不证明收敛失配、小样本规律或动态扰动。新任务2147/244 train=1045/2229；拟合预算与边界见experiments/route_a_residual/task_plan.md。
