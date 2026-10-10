@@ -9,12 +9,18 @@
 - [x] 仅训练分区 Morgan radius2/2048 bit 指纹；预检全训练负例与随机 batch 三元组覆盖。
 - [x] 复用官方 ACA 标签筛选/hinge/margin/分母，只以严格 negative Tanimoto>=.8 替换结构掩码；不套用原作者多视角 OR 与正例结构不相似约束。
 - [x] 检查公式、负例门控、空候选、投影范数、辅助梯度流向、checkpoint 单分子兼容。
-- [ ] 同随机骨干、采样和优化配置，四组：MSE、无结构门控+投影、严格门控+原h、严格门控+投影。辅助组均 MSE+.01*triplet，保留 L1 距离；投影512→128→64 ReLU + L2 normalization。
-- [ ] 训练最多100epoch/patience15、seed/split42、batch32，其余沿用首轮；每epoch首batch记录共享骨干的辅助/回归梯度范数比及cosine。固定alpha不能保证梯度比<=10%。
-- [ ] 全部完成后独立重载，标准库重算RMSE，提交本方向报告；不自动加种子、任务、调参或推送。
+- [x] 同随机骨干、采样和优化配置启动四组；完成MSE、无结构门控+投影、严格门控+投影，严格门控+原h两次CUDA故障未完成。辅助组均 MSE+.01*triplet，保留 L1 距离；投影512→128→64 ReLU + L2 normalization。
+- [x] 训练最多100epoch/patience15、seed/split42、batch32，其余沿用首轮；每epoch首batch记录共享骨干的辅助/回归梯度范数比及cosine。固定alpha不能保证梯度比<=10%。
+- [x] 三个完成模型独立重载和标准库重算RMSE通过，形成有边界阶段报告；不自动加种子、任务、调参或推送。
+
+阶段结果：匹配MSE Overall/Cliff=.590215/.650638，无门控投影=.619922/.649969，门控投影=.609107/.659068。完整组合比MSE分别恶化3.20%/1.30%，不扩该配方。门控组抽样梯度比中位数.52%、最大14.44%；无门控投影组1.54%/3.01%。仅首batch抽样，不是全程上界。报告见 docs/aca_local_20261010/report.md；原h消融尚缺，不能宣布原提议的三个机制原因已证实。
 
 停止条件：非有限值、来源/划分不符，或门控首epoch完全没有候选。随机批次候选稀疏也必须报告，不能把空项当有效监督。
 
 边界：Projection Head 仍回传骨干，没有让h“纯净”的数学保证；hinge满足约束的三元组不会继续推拉；loss量级不能代替共享梯度测量。归一化64维L1距离最大16，原标签差margin保留，预检训练标签范围不超过此必要界。所有结果仅validation，官方test不读，旧checkpoint不初始化。
 
 主计划引用本文件，本方向输入/输出仅 D:/GraphCliff-ACA；新输出 artifacts/aca_local_20261010 与 docs/aca_local_20261010。许可证延用ACA GPL-3.0与原骨干MIT。
+
+运行事件：gated_raw 完成49个epoch后，第50轮loss.backward触发 CUBLAS_STATUS_INTERNAL_ERROR；此前loss有限值检查未触发。新进程CUDA矩阵烟测通过。将原输出保留为 gated_raw_aborted_cuda，仅允许同源码/同配置/同seed一次从头重试（操作性恢复，不调参，不从两次结果择优）；若复现则停该组并报告未完成。故计划为4个完成拟合，最多5次启动，包括一次中断尝试，不能写成从未重试的四次启动。
+
+恢复尝试再次出现 CUDA illegal instruction，已按预算停止 gated_raw；仅三个组完成，原h消融未完成。审计仅处理有完成 summary 的模型，audit_status 显式记录 incomplete。不能以旧部分权重替代，不追加训练，不归因CUDA故障为数学失败。其他三组独立复核后形成有边界的阶段结果。

@@ -1,0 +1,24 @@
+{
+  "train": 2632,
+  "valid": 292,
+  "valid_cliff": 128,
+  "initial_sha256": "74cfe54fa4c8b7e720bc10caf3f2856eeb83a16ec3406e7af26bdf72985199e4",
+  "qualified_directed_negative_pairs": 440,
+  "epoch1_gated_candidates": 5,
+  "epoch1_empty_batches": 82,
+  "batches": 83,
+  "structured_candidates": 588,
+  "structured_empty_batches": 0,
+  "structured_batches": 91,
+  "samples_per_epoch": 2905,
+  "real_batch_candidates": 7,
+  "real_batch_active": 7,
+  "gradient_probe": {
+    "reg_grad_norm": 119.02597045898438,
+    "weighted_aux_grad_norm": 1.1940093040466309,
+    "grad_ratio": 0.01003150236408347,
+    "grad_cosine": 0.5589532149804883
+  },
+  "normalized_embedding_check": true,
+  "inference_checkpoint_compatible": true
+}

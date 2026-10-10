@@ -1,0 +1,20 @@
+[
+  {
+    "arm": "ungated_projected",
+    "median_ratio": 0.015439282242442719,
+    "max_ratio": 0.030088117103445715,
+    "negative_cosine_fraction": 0.027777777777777776,
+    "empty_batches": 0,
+    "candidate_occurrences": 4814660,
+    "active_occurrences": 2053248
+  },
+  {
+    "arm": "gated_projected",
+    "median_ratio": 0.005164350341892855,
+    "max_ratio": 0.14435010512974394,
+    "negative_cosine_fraction": 0.2647058823529412,
+    "empty_batches": 0,
+    "candidate_occurrences": 21274,
+    "active_occurrences": 20691
+  }
+]

@@ -2,6 +2,8 @@
 
 建立日期：2026-10-10（Asia/Shanghai）。
 
+后续单任务结构门控/投影核验见 [报告](docs/aca_local_20261010/report.md)：三组完整、原h消融因两次CUDA故障未完成；完整组合相对匹配MSE没有收益。当前新增核验仅在本地 `codex/aca-structure-projection-20261010` 分支，未推送或合并，公开默认分支仍为首次先导版本。
+
 公开仓库：<https://github.com/yxxiaocainiao/GraphCliff-ACA>，默认分支 `codex/graphcliff-aca`。用户明确授权后独立发布，保留原作者来源与许可；权重和 artifacts 运行日志仅存本地。根 README.md 为原作者文档，本文件与阶段报告描述此仓库的 ACA 试验。
 
 **目的：在原 GraphCliff 单分子回归模型上，检验 ACANet 的监督式三元组学习能否改善活性预测，特别是 Cliff RMSE。**

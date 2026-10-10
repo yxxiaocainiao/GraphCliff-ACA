@@ -1,0 +1,1560 @@
+[
+  {
+    "epoch": 1,
+    "reg": 1.2326166093041688,
+    "triplet": 0.0,
+    "loss": 1.2326166093041688,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 119.02597045898438,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.9589017916431873,
+    "cliff_rmse": 0.9953201118662754
+  },
+  {
+    "epoch": 2,
+    "reg": 0.8906348114579967,
+    "triplet": 0.0,
+    "loss": 0.8906348114579967,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 5.027965545654297,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.8889292606343654,
+    "cliff_rmse": 0.9131847923774159
+  },
+  {
+    "epoch": 3,
+    "reg": 0.8047247673271035,
+    "triplet": 0.0,
+    "loss": 0.8047247673271035,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 5.328580379486084,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.8420239804850632,
+    "cliff_rmse": 0.8536092706933255
+  },
+  {
+    "epoch": 4,
+    "reg": 0.7777580558740744,
+    "triplet": 0.0,
+    "loss": 0.7777580558740744,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 7.976043701171875,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.833789794200538,
+    "cliff_rmse": 0.882660827367354
+  },
+  {
+    "epoch": 5,
+    "reg": 0.7200983999107873,
+    "triplet": 0.0,
+    "loss": 0.7200983999107873,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 5.123130798339844,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.7977146249512937,
+    "cliff_rmse": 0.8239697071991959
+  },
+  {
+    "epoch": 6,
+    "reg": 0.7118302196725921,
+    "triplet": 0.0,
+    "loss": 0.7118302196725921,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 7.433074951171875,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.7517278912926766,
+    "cliff_rmse": 0.7836428042017439
+  },
+  {
+    "epoch": 7,
+    "reg": 0.6229090723031154,
+    "triplet": 0.0,
+    "loss": 0.6229090723031154,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 5.88231897354126,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.7871612220779471,
+    "cliff_rmse": 0.8440599456543891
+  },
+  {
+    "epoch": 8,
+    "reg": 0.6115747335855809,
+    "triplet": 0.0,
+    "loss": 0.6115747335855809,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 5.898813724517822,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.7740907161882914,
+    "cliff_rmse": 0.8118554674427871
+  },
+  {
+    "epoch": 9,
+    "reg": 0.5757303408932153,
+    "triplet": 0.0,
+    "loss": 0.5757303408932153,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 5.850236892700195,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.7250621882463363,
+    "cliff_rmse": 0.7589611472628693
+  },
+  {
+    "epoch": 10,
+    "reg": 0.5610995136009026,
+    "triplet": 0.0,
+    "loss": 0.5610995136009026,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 5.7916259765625,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.7061935352787986,
+    "cliff_rmse": 0.7423026374367458
+  },
+  {
+    "epoch": 11,
+    "reg": 0.5436520487839507,
+    "triplet": 0.0,
+    "loss": 0.5436520487839507,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 3.342728614807129,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.714710262087034,
+    "cliff_rmse": 0.7377987192310062
+  },
+  {
+    "epoch": 12,
+    "reg": 0.46547672967081843,
+    "triplet": 0.0,
+    "loss": 0.46547672967081843,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 12.734905242919922,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.6817801234411743,
+    "cliff_rmse": 0.7185111679335564
+  },
+  {
+    "epoch": 13,
+    "reg": 0.4514155634606767,
+    "triplet": 0.0,
+    "loss": 0.4514155634606767,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 4.603906154632568,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.6944610060022006,
+    "cliff_rmse": 0.7185475891135018
+  },
+  {
+    "epoch": 14,
+    "reg": 0.44520458172808003,
+    "triplet": 0.0,
+    "loss": 0.44520458172808003,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 3.2126975059509277,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.7419123712629291,
+    "cliff_rmse": 0.8174213915452628
+  },
+  {
+    "epoch": 15,
+    "reg": 0.40534794014620495,
+    "triplet": 0.0,
+    "loss": 0.40534794014620495,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 6.001461982727051,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.7255898332924847,
+    "cliff_rmse": 0.7565677665967194
+  },
+  {
+    "epoch": 16,
+    "reg": 0.3962848057742784,
+    "triplet": 0.0,
+    "loss": 0.3962848057742784,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 9.881913185119629,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.710116534498918,
+    "cliff_rmse": 0.7732222276111381
+  },
+  {
+    "epoch": 17,
+    "reg": 0.3626255508441728,
+    "triplet": 0.0,
+    "loss": 0.3626255508441728,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 7.103030681610107,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.6900688038053907,
+    "cliff_rmse": 0.7014969284708988
+  },
+  {
+    "epoch": 18,
+    "reg": 0.3326395641095462,
+    "triplet": 0.0,
+    "loss": 0.3326395641095462,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 8.060505867004395,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.636454945695144,
+    "cliff_rmse": 0.6565013949828413
+  },
+  {
+    "epoch": 19,
+    "reg": 0.3211160630244191,
+    "triplet": 0.0,
+    "loss": 0.3211160630244191,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 5.603997707366943,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.6629194391245574,
+    "cliff_rmse": 0.7099297493540105
+  },
+  {
+    "epoch": 20,
+    "reg": 0.31683024599404425,
+    "triplet": 0.0,
+    "loss": 0.31683024599404425,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 6.132360458374023,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.6431012916945757,
+    "cliff_rmse": 0.6884371951434098
+  },
+  {
+    "epoch": 21,
+    "reg": 0.2986488756132208,
+    "triplet": 0.0,
+    "loss": 0.2986488756132208,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 4.55637788772583,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.6112429549292205,
+    "cliff_rmse": 0.6446273130408301
+  },
+  {
+    "epoch": 22,
+    "reg": 0.2740632726075112,
+    "triplet": 0.0,
+    "loss": 0.2740632726075112,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 3.8845138549804688,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.646505260043822,
+    "cliff_rmse": 0.6635822753961531
+  },
+  {
+    "epoch": 23,
+    "reg": 0.263380221686552,
+    "triplet": 0.0,
+    "loss": 0.263380221686552,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 6.689487457275391,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.6735760254328337,
+    "cliff_rmse": 0.7083692254165717
+  },
+  {
+    "epoch": 24,
+    "reg": 0.2596127789884344,
+    "triplet": 0.0,
+    "loss": 0.2596127789884344,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 5.082054615020752,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.6506883610139218,
+    "cliff_rmse": 0.6895841339780114
+  },
+  {
+    "epoch": 25,
+    "reg": 0.2230908059519868,
+    "triplet": 0.0,
+    "loss": 0.2230908059519868,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 7.0260796546936035,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.7020202331501761,
+    "cliff_rmse": 0.7646390864134115
+  },
+  {
+    "epoch": 26,
+    "reg": 0.22056544066091002,
+    "triplet": 0.0,
+    "loss": 0.22056544066091002,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 8.617559432983398,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.6721038282615536,
+    "cliff_rmse": 0.6921456930694071
+  },
+  {
+    "epoch": 27,
+    "reg": 0.21724818215517908,
+    "triplet": 0.0,
+    "loss": 0.21724818215517908,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 8.110674858093262,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.6243711875311767,
+    "cliff_rmse": 0.6863258222004625
+  },
+  {
+    "epoch": 28,
+    "reg": 0.2168129953634308,
+    "triplet": 0.0,
+    "loss": 0.2168129953634308,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 4.0956525802612305,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.6303040621877148,
+    "cliff_rmse": 0.6796657152369388
+  },
+  {
+    "epoch": 29,
+    "reg": 0.19396103588726352,
+    "triplet": 0.0,
+    "loss": 0.19396103588726352,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 4.417497634887695,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.6247748116543081,
+    "cliff_rmse": 0.6554630601006917
+  },
+  {
+    "epoch": 30,
+    "reg": 0.1973551518484155,
+    "triplet": 0.0,
+    "loss": 0.1973551518484155,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 3.2044296264648438,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.6445400530335176,
+    "cliff_rmse": 0.7158624624491001
+  },
+  {
+    "epoch": 31,
+    "reg": 0.18046449161232442,
+    "triplet": 0.0,
+    "loss": 0.18046449161232442,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 3.4576609134674072,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.6230259419264718,
+    "cliff_rmse": 0.6867172965085294
+  },
+  {
+    "epoch": 32,
+    "reg": 0.15782158035727253,
+    "triplet": 0.0,
+    "loss": 0.15782158035727253,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 3.2771527767181396,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.6483406512921115,
+    "cliff_rmse": 0.6965624073788786
+  },
+  {
+    "epoch": 33,
+    "reg": 0.1684393013867577,
+    "triplet": 0.0,
+    "loss": 0.1684393013867577,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 4.159964561462402,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.6363815870209575,
+    "cliff_rmse": 0.6792251154806952
+  },
+  {
+    "epoch": 34,
+    "reg": 0.14893001362604447,
+    "triplet": 0.0,
+    "loss": 0.14893001362604447,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 4.115813732147217,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.6384441119094614,
+    "cliff_rmse": 0.6962873319538448
+  },
+  {
+    "epoch": 35,
+    "reg": 0.1409149030810174,
+    "triplet": 0.0,
+    "loss": 0.1409149030810174,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 1.9472582340240479,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.6320212351619647,
+    "cliff_rmse": 0.6881450076013383
+  },
+  {
+    "epoch": 36,
+    "reg": 0.13588889422289477,
+    "triplet": 0.0,
+    "loss": 0.13588889422289477,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 2.723792552947998,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.6084275773506411,
+    "cliff_rmse": 0.6352066542693242
+  },
+  {
+    "epoch": 37,
+    "reg": 0.134988688155624,
+    "triplet": 0.0,
+    "loss": 0.134988688155624,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 3.0949292182922363,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.6057895919091489,
+    "cliff_rmse": 0.66630088060989
+  },
+  {
+    "epoch": 38,
+    "reg": 0.12497724972780723,
+    "triplet": 0.0,
+    "loss": 0.12497724972780723,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 3.342501640319824,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.6290614062483199,
+    "cliff_rmse": 0.6903875131960185
+  },
+  {
+    "epoch": 39,
+    "reg": 0.12063868202256253,
+    "triplet": 0.0,
+    "loss": 0.12063868202256253,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 2.9569289684295654,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.6036181905756556,
+    "cliff_rmse": 0.6498494040297668
+  },
+  {
+    "epoch": 40,
+    "reg": 0.128352870542088,
+    "triplet": 0.0,
+    "loss": 0.128352870542088,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 2.62069034576416,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.6054215163132654,
+    "cliff_rmse": 0.6590395525894376
+  },
+  {
+    "epoch": 41,
+    "reg": 0.11260155993361481,
+    "triplet": 0.0,
+    "loss": 0.11260155993361481,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 3.5443239212036133,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.6082644186655921,
+    "cliff_rmse": 0.664850596432063
+  },
+  {
+    "epoch": 42,
+    "reg": 0.11442442070596599,
+    "triplet": 0.0,
+    "loss": 0.11442442070596599,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 2.7815005779266357,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.6174602538539652,
+    "cliff_rmse": 0.664347541391098
+  },
+  {
+    "epoch": 43,
+    "reg": 0.11249109297323966,
+    "triplet": 0.0,
+    "loss": 0.11249109297323966,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 2.8650922775268555,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.6220712279231922,
+    "cliff_rmse": 0.6755449034173138
+  },
+  {
+    "epoch": 44,
+    "reg": 0.10047581878053137,
+    "triplet": 0.0,
+    "loss": 0.10047581878053137,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 3.368189811706543,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.6295998530957307,
+    "cliff_rmse": 0.6556133204860619
+  },
+  {
+    "epoch": 45,
+    "reg": 0.09075185124106744,
+    "triplet": 0.0,
+    "loss": 0.09075185124106744,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 3.5888142585754395,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.6299701355132222,
+    "cliff_rmse": 0.6817920958510021
+  },
+  {
+    "epoch": 46,
+    "reg": 0.09319119695285512,
+    "triplet": 0.0,
+    "loss": 0.09319119695285512,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 2.1291167736053467,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.6210042799961571,
+    "cliff_rmse": 0.6501129810485238
+  },
+  {
+    "epoch": 47,
+    "reg": 0.08500358479902174,
+    "triplet": 0.0,
+    "loss": 0.08500358479902174,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 2.3702056407928467,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.6279236470377593,
+    "cliff_rmse": 0.6988941953440599
+  },
+  {
+    "epoch": 48,
+    "reg": 0.0846460456512676,
+    "triplet": 0.0,
+    "loss": 0.0846460456512676,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 2.120476245880127,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.6132952698134054,
+    "cliff_rmse": 0.6775932452902621
+  },
+  {
+    "epoch": 49,
+    "reg": 0.08527343005660068,
+    "triplet": 0.0,
+    "loss": 0.08527343005660068,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 3.491175413131714,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.6315337288840362,
+    "cliff_rmse": 0.6943449190416707
+  },
+  {
+    "epoch": 50,
+    "reg": 0.07634975930704718,
+    "triplet": 0.0,
+    "loss": 0.07634975930704718,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 4.099003791809082,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.6049521834034456,
+    "cliff_rmse": 0.6678176417945025
+  },
+  {
+    "epoch": 51,
+    "reg": 0.07218745945345309,
+    "triplet": 0.0,
+    "loss": 0.07218745945345309,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 2.440471649169922,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.6209068693217534,
+    "cliff_rmse": 0.6802688378769014
+  },
+  {
+    "epoch": 52,
+    "reg": 0.07585917177278285,
+    "triplet": 0.0,
+    "loss": 0.07585917177278285,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 3.722508668899536,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.6144603409174273,
+    "cliff_rmse": 0.6727562750665879
+  },
+  {
+    "epoch": 53,
+    "reg": 0.0661819810403604,
+    "triplet": 0.0,
+    "loss": 0.0661819810403604,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 1.872039556503296,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.6027847992203837,
+    "cliff_rmse": 0.6678549307247356
+  },
+  {
+    "epoch": 54,
+    "reg": 0.06434586135199272,
+    "triplet": 0.0,
+    "loss": 0.06434586135199272,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 2.1692230701446533,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.5958926192920497,
+    "cliff_rmse": 0.6650711441099046
+  },
+  {
+    "epoch": 55,
+    "reg": 0.061076612202466664,
+    "triplet": 0.0,
+    "loss": 0.061076612202466664,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 1.977534294128418,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.6072063156139327,
+    "cliff_rmse": 0.6648601870049891
+  },
+  {
+    "epoch": 56,
+    "reg": 0.05768324446555054,
+    "triplet": 0.0,
+    "loss": 0.05768324446555054,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 2.048649311065674,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.6052319457570398,
+    "cliff_rmse": 0.686019426324111
+  },
+  {
+    "epoch": 57,
+    "reg": 0.05915188396448933,
+    "triplet": 0.0,
+    "loss": 0.05915188396448933,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 2.445434331893921,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.6073017716440827,
+    "cliff_rmse": 0.6787152716721269
+  },
+  {
+    "epoch": 58,
+    "reg": 0.05384664737752506,
+    "triplet": 0.0,
+    "loss": 0.05384664737752506,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 2.172551155090332,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.5958088740685321,
+    "cliff_rmse": 0.6683280862928033
+  },
+  {
+    "epoch": 59,
+    "reg": 0.04844970171966569,
+    "triplet": 0.0,
+    "loss": 0.04844970171966569,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 1.965630292892456,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.616847621841932,
+    "cliff_rmse": 0.6925584126479182
+  },
+  {
+    "epoch": 60,
+    "reg": 0.05140193899558046,
+    "triplet": 0.0,
+    "loss": 0.05140193899558046,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 1.380980134010315,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.615952362039041,
+    "cliff_rmse": 0.679585376984544
+  },
+  {
+    "epoch": 61,
+    "reg": 0.04416971835796681,
+    "triplet": 0.0,
+    "loss": 0.04416971835796681,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 1.587517499923706,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.5983266305947832,
+    "cliff_rmse": 0.6599591151680209
+  },
+  {
+    "epoch": 62,
+    "reg": 0.04428573216018291,
+    "triplet": 0.0,
+    "loss": 0.04428573216018291,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 1.4568010568618774,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.6103276126281539,
+    "cliff_rmse": 0.67506739832047
+  },
+  {
+    "epoch": 63,
+    "reg": 0.0412538814411311,
+    "triplet": 0.0,
+    "loss": 0.0412538814411311,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 1.5378345251083374,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.6136175111936222,
+    "cliff_rmse": 0.696702748059044
+  },
+  {
+    "epoch": 64,
+    "reg": 0.04114612747439009,
+    "triplet": 0.0,
+    "loss": 0.04114612747439009,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 2.026134967803955,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.5999368630803773,
+    "cliff_rmse": 0.6809412961251108
+  },
+  {
+    "epoch": 65,
+    "reg": 0.03823957537876349,
+    "triplet": 0.0,
+    "loss": 0.03823957537876349,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 1.4545360803604126,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.5991107204528546,
+    "cliff_rmse": 0.6625891109841957
+  },
+  {
+    "epoch": 66,
+    "reg": 0.036611914187156806,
+    "triplet": 0.0,
+    "loss": 0.036611914187156806,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 2.3398261070251465,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.6029276585677084,
+    "cliff_rmse": 0.6718943489389797
+  },
+  {
+    "epoch": 67,
+    "reg": 0.034557254121297405,
+    "triplet": 0.0,
+    "loss": 0.034557254121297405,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 1.2279711961746216,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.590214684770558,
+    "cliff_rmse": 0.6506382337504213
+  },
+  {
+    "epoch": 68,
+    "reg": 0.03267455979309681,
+    "triplet": 0.0,
+    "loss": 0.03267455979309681,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 1.4610174894332886,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.5990554245580172,
+    "cliff_rmse": 0.666305256842795
+  },
+  {
+    "epoch": 69,
+    "reg": 0.031943669649748305,
+    "triplet": 0.0,
+    "loss": 0.031943669649748305,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 1.1549028158187866,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.6060274996465358,
+    "cliff_rmse": 0.6745288932928132
+  },
+  {
+    "epoch": 70,
+    "reg": 0.03041337941534394,
+    "triplet": 0.0,
+    "loss": 0.03041337941534394,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 1.1411312818527222,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.6002974841122565,
+    "cliff_rmse": 0.665566323218132
+  },
+  {
+    "epoch": 71,
+    "reg": 0.02934682969895164,
+    "triplet": 0.0,
+    "loss": 0.02934682969895164,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 1.319579839706421,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.6015043616086178,
+    "cliff_rmse": 0.6578610711372646
+  },
+  {
+    "epoch": 72,
+    "reg": 0.028152008032788507,
+    "triplet": 0.0,
+    "loss": 0.028152008032788507,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 1.445643424987793,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.595554110433009,
+    "cliff_rmse": 0.6727213600480155
+  },
+  {
+    "epoch": 73,
+    "reg": 0.02756192005478269,
+    "triplet": 0.0,
+    "loss": 0.02756192005478269,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 1.7333331108093262,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.6046608170757717,
+    "cliff_rmse": 0.6751175132195265
+  },
+  {
+    "epoch": 74,
+    "reg": 0.025925807524055704,
+    "triplet": 0.0,
+    "loss": 0.025925807524055704,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 2.1262125968933105,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.6020834421115044,
+    "cliff_rmse": 0.6676986815460637
+  },
+  {
+    "epoch": 75,
+    "reg": 0.025427320202661873,
+    "triplet": 0.0,
+    "loss": 0.025427320202661873,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 1.559426188468933,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.6012829697167622,
+    "cliff_rmse": 0.6609722152498384
+  },
+  {
+    "epoch": 76,
+    "reg": 0.024882050141974282,
+    "triplet": 0.0,
+    "loss": 0.024882050141974282,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 2.2001476287841797,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.601385022958681,
+    "cliff_rmse": 0.6793112005454983
+  },
+  {
+    "epoch": 77,
+    "reg": 0.022604289282876326,
+    "triplet": 0.0,
+    "loss": 0.022604289282876326,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 1.377187967300415,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.5911353994411924,
+    "cliff_rmse": 0.6619286571586721
+  },
+  {
+    "epoch": 78,
+    "reg": 0.021463127727275665,
+    "triplet": 0.0,
+    "loss": 0.021463127727275665,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 1.5333536863327026,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.5978214153783631,
+    "cliff_rmse": 0.6686375901328082
+  },
+  {
+    "epoch": 79,
+    "reg": 0.019580911992441562,
+    "triplet": 0.0,
+    "loss": 0.019580911992441562,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 1.2372794151306152,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.6009874126448856,
+    "cliff_rmse": 0.6748544161697406
+  },
+  {
+    "epoch": 80,
+    "reg": 0.019722328894160906,
+    "triplet": 0.0,
+    "loss": 0.019722328894160906,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 0.9804423451423645,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.6035827083097675,
+    "cliff_rmse": 0.6796999704739201
+  },
+  {
+    "epoch": 81,
+    "reg": 0.018686652104666846,
+    "triplet": 0.0,
+    "loss": 0.018686652104666846,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 1.6881669759750366,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.605749163732083,
+    "cliff_rmse": 0.6737175706541885
+  },
+  {
+    "epoch": 82,
+    "reg": 0.018935179289770208,
+    "triplet": 0.0,
+    "loss": 0.018935179289770208,
+    "samples": 2905,
+    "batches": 91,
+    "candidates": 0,
+    "active": 0,
+    "empty_batches": 91,
+    "first_batch_gradient": {
+      "reg_grad_norm": 1.1265311241149902,
+      "weighted_aux_grad_norm": 0.0,
+      "grad_ratio": 0.0,
+      "grad_cosine": null
+    },
+    "rmse": 0.5973779904659109,
+    "cliff_rmse": 0.6677498809778591
+  }
+]

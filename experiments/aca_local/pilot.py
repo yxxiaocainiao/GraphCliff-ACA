@@ -268,8 +268,12 @@ def audit():
     _,va,_,vg = base.development(TASK)
     loader = DataLoader(vg,batch_size=32,collate_fn=base.collate_graphs)
     results = []
+    incomplete = []
     for arm in ARMS:
         folder = OUT/arm
+        if not (folder/'summary.json').exists():
+            incomplete.append(arm)
+            continue
         summary = json.loads((folder/'summary.json').read_text())
         model = base.model_new()
         model.load_state_dict(torch.load(folder/'best_model.pt',weights_only=True)['model_state_dict'])
@@ -286,7 +290,10 @@ def audit():
         summary['replay_max_abs']=diff
         results.append(summary)
     assert len({r['initial_sha256'] for r in results}) == 1
+    assert not incomplete or incomplete == ['gated_raw'], 'other planned arms have not completed'
     base.save(OUT/'audit.json',results)
+    base.save(OUT/'audit_status.json',dict(completed=[row['arm'] for row in results],incomplete=incomplete,
+        all_planned_fits_completed=not incomplete,reason='raw gated arm stopped after two CUDA failures' if incomplete else None))
     print(json.dumps(results,indent=2),flush=True)
 
 if __name__ == '__main__':

@@ -1,0 +1,24 @@
+D:\Tools\conda-envs\graphcliff\lib\site-packages\torch\nn\_reduction.py:51: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+gated_raw epoch=1 rmse=1.1574 cliff=1.1508 candidates=588 stale=0
+gated_raw epoch=5 rmse=1.0108 cliff=0.9615 candidates=564 stale=0
+gated_raw epoch=10 rmse=0.8816 cliff=0.9002 candidates=576 stale=0
+gated_raw epoch=15 rmse=0.8650 cliff=0.9199 candidates=609 stale=0
+gated_raw epoch=20 rmse=0.8020 cliff=0.8422 candidates=638 stale=0
+gated_raw epoch=25 rmse=0.8116 cliff=0.8690 candidates=564 stale=1
+gated_raw epoch=30 rmse=0.8311 cliff=0.8866 candidates=639 stale=6
+gated_raw epoch=35 rmse=0.7598 cliff=0.7986 candidates=640 stale=0
+gated_raw epoch=40 rmse=0.7451 cliff=0.7977 candidates=567 stale=4
+gated_raw epoch=45 rmse=0.7338 cliff=0.7878 candidates=540 stale=9
+Traceback (most recent call last):
+  File "D:\GraphCliff-ACA\experiments\aca_local\pilot.py", line 302, in <module>
+    run(args.arm)
+  File "D:\GraphCliff-ACA\experiments\aca_local\pilot.py", line 229, in run
+    loss.backward()
+  File "D:\Tools\conda-envs\graphcliff\lib\site-packages\torch\_tensor.py", line 648, in backward
+    torch.autograd.backward(
+  File "D:\Tools\conda-envs\graphcliff\lib\site-packages\torch\autograd\__init__.py", line 353, in backward
+    _engine_run_backward(
+  File "D:\Tools\conda-envs\graphcliff\lib\site-packages\torch\autograd\graph.py", line 824, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+RuntimeError: CUDA error: CUBLAS_STATUS_INTERNAL_ERROR when calling `cublasSgemm( handle, opa, opb, m, n, k, &alpha, a, lda, b, ldb, &beta, c, ldc)`

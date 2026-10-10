@@ -1,0 +1,22 @@
+D:\Tools\conda-envs\graphcliff\lib\site-packages\torch\nn\_reduction.py:51: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+gated_raw epoch=1 rmse=1.1574 cliff=1.1508 candidates=588 stale=0
+gated_raw epoch=5 rmse=0.9912 cliff=0.9422 candidates=564 stale=0
+gated_raw epoch=10 rmse=0.9380 cliff=0.9748 candidates=576 stale=1
+Traceback (most recent call last):
+  File "D:\GraphCliff-ACA\experiments\aca_local\pilot.py", line 302, in <module>
+    run(args.arm)
+  File "D:\GraphCliff-ACA\experiments\aca_local\pilot.py", line 230, in run
+    torch.nn.utils.clip_grad_norm_(model.parameters(),1.,error_if_nonfinite=True)
+  File "D:\Tools\conda-envs\graphcliff\lib\site-packages\torch\nn\utils\clip_grad.py", line 38, in _no_grad_wrapper
+    return func(*args, **kwargs)
+  File "D:\Tools\conda-envs\graphcliff\lib\site-packages\torch\nn\utils\clip_grad.py", line 219, in clip_grad_norm_
+    total_norm = _get_total_norm(grads, norm_type, error_if_nonfinite, foreach)
+  File "D:\Tools\conda-envs\graphcliff\lib\site-packages\torch\nn\utils\clip_grad.py", line 38, in _no_grad_wrapper
+    return func(*args, **kwargs)
+  File "D:\Tools\conda-envs\graphcliff\lib\site-packages\torch\nn\utils\clip_grad.py", line 105, in _get_total_norm
+    if error_if_nonfinite and torch.logical_or(total_norm.isnan(), total_norm.isinf()):
+RuntimeError: CUDA error: an illegal instruction was encountered
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.

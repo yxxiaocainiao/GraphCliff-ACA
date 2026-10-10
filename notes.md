@@ -1,5 +1,11 @@
 # 来源与范围核对
 
+## 2026-10-10：结构门控/投影核验
+
+用户提出严格结构负例、投影归一化、MSE与alpha=.01，固定CHEMBL234四组。直接门控随机batch仅5个候选、82/83批空（float32合格有向负例440），所以所有组统一用29普通分子+一组三元组的训练内采样；91批/2905样本次数，重复三元组公平计入MSE对照。原h仍接受投影反向梯度，标量loss比不等于梯度比。原ACA多视角OR门控与本试验负例T>=.8不是同一语义。
+
+完成MSE=.590215/.650638（Overall/Cliff），无门控投影=.619922/.649969，门控投影=.609107/.659068；完整组合没有优于匹配MSE。原h门控先49epochs后CUDA/cuBLAS错误，一次同配方重试再illegal instruction，按预算停组；两个部分权重不排名。三个完成checkpoint独立重载与CSV指标重算通过。完成模型均原骨干strict加载、推理不调用投影；旧项目/原先导未改，官方test不评价。本轮仅本地topic分支，不自动推送。完整证据在 docs/aca_local_20261010。
+
 ## 2026-10-10：公开发布授权与核验
 
 用户明确要求将本方向单独发布为公开 GitHub 仓库。目标为 https://github.com/yxxiaocainiao/GraphCliff-ACA，origin 已配置至该用户仓库；upstream 仍指原作者，未向 upstream 写入。默认分支 codex/graphcliff-aca，不合并其他项目。

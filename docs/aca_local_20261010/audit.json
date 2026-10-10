@@ -1,0 +1,29 @@
+[
+  {
+    "arm": "mse",
+    "initial_sha256": "74cfe54fa4c8b7e720bc10caf3f2856eeb83a16ec3406e7af26bdf72985199e4",
+    "best_epoch": 67,
+    "epochs": 82,
+    "rmse": 0.590214684770558,
+    "cliff_rmse": 0.6506382337504213,
+    "replay_max_abs": 4.440892098500626e-16
+  },
+  {
+    "arm": "ungated_projected",
+    "initial_sha256": "74cfe54fa4c8b7e720bc10caf3f2856eeb83a16ec3406e7af26bdf72985199e4",
+    "best_epoch": 21,
+    "epochs": 36,
+    "rmse": 0.6199215793274929,
+    "cliff_rmse": 0.6499693224664075,
+    "replay_max_abs": 4.440892098500626e-16
+  },
+  {
+    "arm": "gated_projected",
+    "initial_sha256": "74cfe54fa4c8b7e720bc10caf3f2856eeb83a16ec3406e7af26bdf72985199e4",
+    "best_epoch": 21,
+    "epochs": 36,
+    "rmse": 0.6091067357673076,
+    "cliff_rmse": 0.6590684967598883,
+    "replay_max_abs": 4.440892098500626e-16
+  }
+]

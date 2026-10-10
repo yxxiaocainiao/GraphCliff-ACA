@@ -1,0 +1,12 @@
+{
+  "completed": [
+    "mse",
+    "ungated_projected",
+    "gated_projected"
+  ],
+  "incomplete": [
+    "gated_raw"
+  ],
+  "all_planned_fits_completed": false,
+  "reason": "raw gated arm stopped after two CUDA failures"
+}
