@@ -1,0 +1,19 @@
+{
+  "git_head": "e391ee3370cc36427fb76b7b0aba8d587bb241d4",
+  "source_sha256": {
+    "model.py": "7e1de8c890dee7275410041456313dae27ec7add829e8f5f741a385deac1a6d6",
+    "dataset.py": "466ff02d228d897725e9798f5d8e3ac04055c5310f1b2df14db9917ef7b02117",
+    "dataset_utils.py": "49038a72914647412b183acafcaca03041fd17256233466fa9c9b438ffbea95f",
+    "main.py": "fae1d1086d1441b59b8dc3cddfb1c318ba31b153c7af4ff1fc24fc48db448166",
+    "experiments/aca/run.py": "da9fadd5776927b7c011dfb61532c8447f633333dbfa5bfc1147cb9f24de1900",
+    "experiments/route_a/pilot.py": "c9714985bb17d9d868a5294da19d1225dbfa6a08ef58c8caee5354b940f6d943",
+    "experiments/route_a/task_plan.md": "659bbd94bb26be70c3f57b602dfe53bb54cbefd59b1da49c46c2c4115fe3132c"
+  },
+  "data_sha256": "62a66fa205500036adc34f431f18ff6c3b4dc2f340e65f9fe6f586f5d6af80b0",
+  "protocol": "# 路线 A 固定先导（2026-10-10）\n\n- [x] 实现独立入口和四组：graph、fp、concat、gate；旧模型、ACA、tools不改。\n- [x] 检查指纹/样本对应、相同主干初始化、门控端点、有限梯度和checkpoint重载。\n- [ ] 两任务各四组顺序运行，共8次；CUDA错误即停止，不自动追加恢复或调参。\n- [ ] 独立进程重载8个最佳checkpoint、复算CSV指标，生成阶段报告。\n\n固定：CHEMBL234_Ki、CHEMBL2047_EC50；train内分层10% validation，seed/split42；不读取官方test标签。Morgan radius2/2048 bit，无手性，单层2048→512+ReLU。concat直接1024→128回归头；gate=sigmoid(Linear([h_graph,h_fp]))，512维逐通道混合后沿用原头；不额外归一化。全部MSE、均匀shuffle、batch32；H256/L3/groups4/K3/dropout0；AdamW lr1e-4/wd1e-5/betas(.9,.95)，clip1，warmup10/100epochs/patience15，严格最小validation Overall MSE选模。\n\n图主干及原头同seed42初始化，新增层使用独立seed1042，训练随机序列重置seed42；concat输入维度不同，不能匹配首层头权重。单种子只作筛选，不给统计显著性/官方test结论。主干和fp分支分别使用同初始化校验；参数量差异必须报告。\n\n输出：artifacts/route_a_20261010（权重/运行记录），docs/route_a_20261010（小型阶段证据）。不安装依赖，不自动发布。\n\n预检通过：CHEMBL234 train/valid/cliff=2632/292/128；CHEMBL2047=452/51/20。graph路径eval预测与原模型完全一致；所有主干/指纹分支初始hash一致，门控两端点、有限梯度、strict重载通过。上游LongPoly默认dropout=.1仍保留（构造器dropout0未传入该层）；ShortGINE.norm三个参数未参与forward，不修上游。\n",
+  "torch": "2.7.1+cu128",
+  "cuda": "12.8",
+  "device": "NVIDIA GeForce RTX 5060 Laptop GPU",
+  "pretrained_checkpoint_used": false,
+  "label_scale": "y=-log10(nM)"
+}

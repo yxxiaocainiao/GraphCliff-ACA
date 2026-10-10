@@ -51,3 +51,4 @@
 
 ## 路线 A（2026-10-10）
 用户授权图-指纹融合固定先导；独立分支 codex/route-a-fusion-20261010。执行计划见 experiments/route_a/task_plan.md，两任务四组共8次，不自动扩大或发布。
+路线A八组已完成、独立重载/CSV复算/训练源码hash核验通过。gate两任务均落后graph，暂停扩大；concat仅2047有收益。详细见experiments/route_a/README.md和docs/route_a_20261010/report.md。
