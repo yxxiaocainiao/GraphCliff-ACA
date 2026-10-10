@@ -56,3 +56,6 @@
 ## 路线A残差与学习率受控核验
 用户授权下一步试验；分支codex/route-a-residual-20261010。冻结13次新训练（12次主比较+1次concat100早停诊断），四旧对照复用并重审。执行计划experiments/route_a_residual/task_plan.md。
 残差/LR核验本轮按CUDA停止条件结束：完成9次新拟合，重审4个旧对照；244图组60轮后CUDA中断，另3组未启动。三个任务完整，四任务目标尚缺244。暂停扩大配方，未自动恢复；报告docs/route_a_residual_20261010/report.md。
+
+## 30任务GraphCliff与concat正式匹配比较（2026-10-11）
+用户授权按原仓库官方划分比较30任务，目标北京时间10月11日08:30。固定单seed42/两模型，当前入口默认batch128/min_delta1e-4；完整协议见experiments/route_a_30/task_plan.md。输出artifacts/route_a_30_20261011和docs/route_a_30_20261011。
