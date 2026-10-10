@@ -1,0 +1,43 @@
+{
+  "prefix_epochs": 34,
+  "prefix_max_abs": 0.09721504345820975,
+  "first_divergence_epoch": 7,
+  "old_best": {
+    "epoch": 19,
+    "train_mse": 0.13651677916296348,
+    "lr": 9.852963845066182e-05,
+    "rmse": 0.633121747641762,
+    "cliff_rmse": 0.6615960167397213
+  },
+  "simulated_stop_epoch": 66,
+  "best_before_stop": {
+    "epoch": 51,
+    "train_mse": 0.01340440407856778,
+    "lr": 6.079162869547908e-05,
+    "fp_lr": 6.079162869547908e-05,
+    "alpha": null,
+    "first_batch_residual_norm_ratio": null,
+    "rmse": 0.631870004602128,
+    "cliff_rmse": 0.6676673127892907
+  },
+  "best_after_stop": {
+    "epoch": 72,
+    "train_mse": 0.005239185555144511,
+    "lr": 2.5750000000000013e-05,
+    "fp_lr": 2.5750000000000013e-05,
+    "alpha": null,
+    "first_batch_residual_norm_ratio": null,
+    "rmse": 0.6380184661594626,
+    "cliff_rmse": 0.6773190666816834
+  },
+  "best_all": {
+    "epoch": 51,
+    "train_mse": 0.01340440407856778,
+    "lr": 6.079162869547908e-05,
+    "fp_lr": 6.079162869547908e-05,
+    "alpha": null,
+    "first_batch_residual_norm_ratio": null,
+    "rmse": 0.631870004602128,
+    "cliff_rmse": 0.6676673127892907
+  }
+}

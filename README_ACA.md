@@ -2,6 +2,8 @@
 
 建立日期：2026-10-10（Asia/Shanghai）。
 
+后续残差/指纹低LR核验：9次新拟合完成、4个旧对照重审；CHEMBL244图组CUDA中断，后续3组未启动。三个完成任务未支持统一残差/低LR配方，100轮拼接诊断也未超过图对照。见 [残差核验入口](experiments/route_a_residual/README.md) 与 [报告](docs/route_a_residual_20261010/report.md)。停止后续训练，未自动重试或发布。
+
 路线 A 图-指纹融合固定先导已在独立本地分支完成（两个任务、四组、8次训练）。门控组两任务均落后GraphCliff；简单拼接仅在CHEMBL2047有收益，暂停扩大门控配方。见 [路线 A 入口](experiments/route_a/README.md) 和 [完整报告](docs/route_a_20261010/report.md)。仅开发验证、单种子，未评价官方test，未自动发布。
 
 后续单任务结构门控/投影核验见 [报告](docs/aca_local_20261010/report.md)：三组完整、原h消融因两次CUDA故障未完成；完整组合相对匹配MSE没有收益。当前新增核验仅在本地 `codex/aca-structure-projection-20261010` 分支，未推送或合并，公开默认分支仍为首次先导版本。

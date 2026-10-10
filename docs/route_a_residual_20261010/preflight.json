@@ -1,0 +1,38 @@
+{
+  "CHEMBL234_Ki": {
+    "train": 2632,
+    "valid": 292,
+    "valid_cliff": 128,
+    "graph_initial_hash": "dd0b8a17c01029b5e06075aac4ea1f8de156d8dbf61c9ac7db69443e53a467d3",
+    "head_initial_hash": "3406b06aa078640d55ab328d7d63da7cff8e19c166a6b94fb1fe4078c2082eb3",
+    "fp_initial_hash": "805701cb4724b622ccb2be50bb52eb5504762609f78387a7af315dd2147c1d23",
+    "checks": "passed"
+  },
+  "CHEMBL2047_EC50": {
+    "train": 452,
+    "valid": 51,
+    "valid_cliff": 20,
+    "graph_initial_hash": "dd0b8a17c01029b5e06075aac4ea1f8de156d8dbf61c9ac7db69443e53a467d3",
+    "head_initial_hash": "3406b06aa078640d55ab328d7d63da7cff8e19c166a6b94fb1fe4078c2082eb3",
+    "fp_initial_hash": "805701cb4724b622ccb2be50bb52eb5504762609f78387a7af315dd2147c1d23",
+    "checks": "passed"
+  },
+  "CHEMBL2147_Ki": {
+    "train": 1045,
+    "valid": 117,
+    "valid_cliff": 46,
+    "graph_initial_hash": "dd0b8a17c01029b5e06075aac4ea1f8de156d8dbf61c9ac7db69443e53a467d3",
+    "head_initial_hash": "3406b06aa078640d55ab328d7d63da7cff8e19c166a6b94fb1fe4078c2082eb3",
+    "fp_initial_hash": "805701cb4724b622ccb2be50bb52eb5504762609f78387a7af315dd2147c1d23",
+    "checks": "passed"
+  },
+  "CHEMBL244_Ki": {
+    "train": 2229,
+    "valid": 247,
+    "valid_cliff": 118,
+    "graph_initial_hash": "dd0b8a17c01029b5e06075aac4ea1f8de156d8dbf61c9ac7db69443e53a467d3",
+    "head_initial_hash": "3406b06aa078640d55ab328d7d63da7cff8e19c166a6b94fb1fe4078c2082eb3",
+    "fp_initial_hash": "805701cb4724b622ccb2be50bb52eb5504762609f78387a7af315dd2147c1d23",
+    "checks": "passed"
+  }
+}

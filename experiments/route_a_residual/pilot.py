@@ -212,13 +212,27 @@ def run():
 
 
 def audit():
+    import ast
     DOC.mkdir(parents=True, exist_ok=True)
-    results = []
+    frozen = OUT/'frozen_training_pilot.py'
+    old_tree = ast.parse(frozen.read_text(encoding='utf-8'))
+    new_tree = ast.parse(Path(__file__).read_text(encoding='utf-8'))
+    for tree in (old_tree,new_tree):
+        tree.body = [node for node in tree.body if not isinstance(node,ast.FunctionDef) or node.name!='audit']
+    assert ast.dump(old_tree)==ast.dump(new_tree), 'only audit may change after training'
+    results, incomplete = [], []
     for task in TASKS:
         _,va,_,vg = ra.data(task)
         loader = torch.utils.data.DataLoader(vg,batch_size=32,collate_fn=ra.collate)
         for arm in (*ARMS, 'concat100') if task == 'CHEMBL234_Ki' else ARMS:
             path = path_for(task,arm)
+            if not (path/'summary.json').exists():
+                partial = json.loads((path/'history.json').read_text(encoding='utf-8')) if (path/'history.json').exists() else []
+                incomplete.append(dict(task=task,arm=arm,completed_epochs=len(partial),
+                                       status='aborted_cuda' if partial else 'not_started_after_cuda_stop'))
+                if partial:
+                    (DOC/f'{task}_{arm}_incomplete_history.json').write_bytes((path/'history.json').read_bytes())
+                continue
             result = json.loads((path/'summary.json').read_text(encoding='utf-8'))
             model = model_new(arm)
             assert ra.base.state_hash(model) == result['initial_sha256']
@@ -245,38 +259,62 @@ def audit():
             del model
         provenance = json.loads((OUT/task/'provenance.json').read_text(encoding='utf-8'))
         for name,digest in provenance['source_sha256'].items():
-            assert hashlib.sha256((ROOT/name).read_bytes()).hexdigest()==digest,name
+            source = frozen if name=='experiments/route_a_residual/pilot.py' else ROOT/name
+            content = provenance['protocol'].encode('utf-8') if name=='experiments/route_a_residual/task_plan.md' else source.read_bytes()
+            assert hashlib.sha256(content).hexdigest()==digest,name
         assert hashlib.sha256((ROOT/'benchmark_data'/f'{task}.csv').read_bytes()).hexdigest()==provenance['data_sha256']
         for name in ('split.json','provenance.json'):
             (DOC/f'{task}_{name}').write_bytes((OUT/task/name).read_bytes())
-    assert len(results)==17 and sum(not r['reused'] for r in results)==13
+    assert len(results)+len(incomplete)==17
     old = json.loads((ra.OUT/'CHEMBL234_Ki/concat/history.json').read_text(encoding='utf-8'))
     full = json.loads((OUT/'CHEMBL234_Ki/concat100/history.json').read_text(encoding='utf-8'))
     assert len(full)==100
     prefix_error = max(abs(a[k]-b[k]) for a,b in zip(old,full) for k in ('train_mse','rmse','cliff_rmse','lr'))
-    assert prefix_error < 1e-5, '100epoch diagnostic prefix does not reproduce earlier training'
+    best, stale, simulated_stop = float('inf'),0,len(full)
+    for row in full:
+        if row['rmse'] < best:
+            best,stale = row['rmse'],0
+        else:
+            stale += 1
+        if stale >= 15:
+            simulated_stop = row['epoch']
+            break
+    first_divergence = next((a['epoch'] for a,b in zip(old,full)
+                             if max(abs(a[k]-b[k]) for k in ('train_mse','rmse','cliff_rmse','lr'))>1e-8),None)
     diagnostic = dict(prefix_epochs=len(old),prefix_max_abs=prefix_error,
-                      best_before_stop=min(old,key=lambda r:r['rmse']),
-                      best_after_stop=min(full[len(old):],key=lambda r:r['rmse']),
+                      first_divergence_epoch=first_divergence,old_best=min(old,key=lambda r:r['rmse']),
+                      simulated_stop_epoch=simulated_stop,
+                      best_before_stop=min(full[:simulated_stop],key=lambda r:r['rmse']),
+                      best_after_stop=min(full[simulated_stop:],key=lambda r:r['rmse']) if simulated_stop<len(full) else None,
                       best_all=min(full,key=lambda r:r['rmse']))
     ra.base.save(DOC/'early_stop_diagnostic.json',diagnostic)
     ra.base.save(DOC/'audit.json',results)
+    ra.base.save(DOC/'audit_status.json',dict(completed=len(results),new_fits=sum(not r['reused'] for r in results),
+                 reused=sum(r['reused'] for r in results),incomplete=incomplete,
+                 training_code_unchanged_ast=True,audit_amendment='partial CUDA-stop handling and within-run early-stop diagnostic',
+                 frozen_training_sha256=hashlib.sha256(frozen.read_bytes()).hexdigest(),
+                 current_audit_source_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest()))
+    (DOC/'frozen_training_pilot.py').write_bytes(frozen.read_bytes())
+    (DOC/'cuda_failure.txt').write_text('\n'.join((OUT/'run.log').read_text(encoding='utf-8').splitlines()[-25:])+'\n',encoding='utf-8')
     lines=['# 路线 A 残差与学习率固定核验','',
-           '四任务、seed42、官方train内验证，13次新拟合+4个复用对照；复用对照重新重载审计。无test评价。','',
+           f'计划四任务13次新拟合，完成{sum(not r["reused"] for r in results)}次；另4个复用对照重新重载审计。244图组CUDA中断，后续3组未启动，未纳入排名。seed42，官方train内验证，无test评价。','',
            '| Task | Arm | Overall | Cliff | best/epochs | alpha best |','|---|---|---:|---:|---:|---:|']
     for r in results:
         lines.append(f'| {r["task"]} | {r["arm"]} | {r["rmse"]:.6f} | {r["cliff_rmse"]:.6f} | {r["best_epoch"]}/{r["epochs"]} | {r.get("alpha_best")} |')
     lines.extend(['','## 相对graph（负值改善）','','| Task | Arm | Overall | Cliff |','|---|---|---:|---:|'])
     for task in TASKS:
         arms={r['arm']:r for r in results if r['task']==task}
+        if not all(arm in arms for arm in ARMS):
+            continue
         for arm in ('concat','residual','residual_slow'):
             changes=[(arms[arm][k]/arms['graph'][k]-1)*100 for k in ('rmse','cliff_rmse')]
             lines.append(f'| {task} | {arm} | {changes[0]:+.2f}% | {changes[1]:+.2f}% |')
     lines.extend(['','## 早停诊断','',f'前{len(old)}轮与旧concat最大绝对差={prefix_error:.3g}。',
-                  f'原best epoch={diagnostic["best_before_stop"]["epoch"]}；完整100轮best={diagnostic["best_all"]["epoch"]}。',
-                  '诊断用于检查原早停后是否有改善；延长训练即使有效也不证明指纹收敛更快是原因。','',
+                  f'旧轨迹best={diagnostic["old_best"]["epoch"]}；重跑从epoch{first_divergence}出现差异；不作为旧训练的精确续跑。',
+                  f'本次完整轨迹模拟patience15停止epoch={simulated_stop}；100轮best={diagnostic["best_all"]["epoch"]}。',
+                  '在同一完整轨迹内比较模拟停止前/后，避免运行差异混杂；差异来源未定位。延长训练即使有效也不证明指纹收敛更快是原因。','',
                   'alpha无约束可学习，范数比为每epoch首训练batch的平均样本L2比，非全训练上界。低LR组全程fp/main=.2；alpha沿用main LR。',
-                  '所有checkpoint独立strict重载，预测差<1e-5；CSV用math.fsum复算，初始hash、源码/数据hash与分区核验通过。',
+                  '所有完成模型独立strict重载，预测差<1e-5；CSV用math.fsum复算，初始hash、冻结训练源码/数据hash与分区核验通过。审计只修订CUDA未完成处理与诊断比较，AST核验其他函数/导入/入口未变。',
                   '只有单seed、验证集选模，20个2047验证cliff分子；跨任务差异受靶点/噪声/化学空间等影响，不能归因样本量或称统计显著。',
                   '残差保留回归头输入/初始权重，但仍改变优化轨迹；未叠加其他模块、未调参、未发布。'])
     (DOC/'report.md').write_text('\n'.join(lines)+'\n',encoding='utf-8')

@@ -1,0 +1,24 @@
+CHEMBL244_Ki graph epoch=30 rmse=0.823664 cliff=0.931974 stale=4
+CHEMBL244_Ki graph epoch=35 rmse=0.780251 cliff=0.912532 stale=1
+CHEMBL244_Ki graph epoch=40 rmse=0.827654 cliff=0.995801 stale=6
+CHEMBL244_Ki graph epoch=45 rmse=0.785750 cliff=0.939902 stale=11
+CHEMBL244_Ki graph epoch=50 rmse=0.789680 cliff=0.950378 stale=3
+CHEMBL244_Ki graph epoch=55 rmse=0.746789 cliff=0.882933 stale=8
+CHEMBL244_Ki graph epoch=60 rmse=0.746221 cliff=0.895532 stale=13
+Traceback (most recent call last):
+  File "D:\GraphCliff-ACA\experiments\route_a_residual\pilot.py", line 291, in <module>
+    {'check':check,'run':run,'audit':audit}[args.action]()
+  File "D:\GraphCliff-ACA\experiments\route_a_residual\pilot.py", line 209, in run
+    fit(task,arm,tr,va,tg,vg)
+  File "D:\GraphCliff-ACA\experiments\route_a_residual\pilot.py", line 150, in fit
+    loss.backward()
+  File "D:\Tools\conda-envs\graphcliff\lib\site-packages\torch\_tensor.py", line 648, in backward
+    torch.autograd.backward(
+  File "D:\Tools\conda-envs\graphcliff\lib\site-packages\torch\autograd\__init__.py", line 353, in backward
+    _engine_run_backward(
+  File "D:\Tools\conda-envs\graphcliff\lib\site-packages\torch\autograd\graph.py", line 824, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+RuntimeError: CUDA error: unspecified launch failure
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.

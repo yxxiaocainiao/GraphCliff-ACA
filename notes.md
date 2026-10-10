@@ -64,3 +64,4 @@ ACANet 固定源码 4c43e602 的 clsar/model/loss.py 经官方 raw 在线下载�
 
 ## 路线A机制解释审计
 旧best19/26实际停34/41；指纹是bit而非count；gate额外157万包含fp105万和gate52万；gate在234优于concat。此前结果不证明收敛失配、小样本规律或动态扰动。新任务2147/244 train=1045/2229；拟合预算与边界见experiments/route_a_residual/task_plan.md。
+核验结果：234 residual/slow Cliff=.667560/.634222，均落后graph .619991；2047=.470198/.552375，concat .375809仍最好；2147=.581771/.640338，concat .571329最好。concat100 best51=.631870/.667667；第7轮起轨迹与旧运行分叉，原因未定位，模拟早停66已包含best51，未支持延长训练修复。244图组保存60轮后CUDA launch failure，无重试，后3组未启动；13完成模型独立审计通过。仅审计函数为处理未完成与同轨迹比较而改动，训练AST与冻结源码匹配。

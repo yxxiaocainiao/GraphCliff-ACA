@@ -1,0 +1,19 @@
+{
+  "git_head": "bce1bbe2a17d7fb65c19cce5057f6ce9899b1766",
+  "source_sha256": {
+    "model.py": "7e1de8c890dee7275410041456313dae27ec7add829e8f5f741a385deac1a6d6",
+    "dataset.py": "466ff02d228d897725e9798f5d8e3ac04055c5310f1b2df14db9917ef7b02117",
+    "dataset_utils.py": "49038a72914647412b183acafcaca03041fd17256233466fa9c9b438ffbea95f",
+    "main.py": "fae1d1086d1441b59b8dc3cddfb1c318ba31b153c7af4ff1fc24fc48db448166",
+    "experiments/aca/run.py": "da9fadd5776927b7c011dfb61532c8447f633333dbfa5bfc1147cb9f24de1900",
+    "experiments/route_a/pilot.py": "c9714985bb17d9d868a5294da19d1225dbfa6a08ef58c8caee5354b940f6d943",
+    "experiments/route_a_residual/pilot.py": "f209db994c6b25dfad1251b86aa4a1e3ce46e3e63c9cf5be3d6507e7dbfdf8b8",
+    "experiments/route_a_residual/task_plan.md": "0362e1d86e550fb060423e2cb63c123acad1eacc0e250fc1346aac07f603624d"
+  },
+  "data_sha256": "62a66fa205500036adc34f431f18ff6c3b4dc2f340e65f9fe6f586f5d6af80b0",
+  "protocol": "# 路线 A 残差/LR 核验（2026-10-10）\n\n- [x] 实现最小残差入口、分组LR与范数诊断；原GraphCliff/ACA/路线A/tools不改。\n- [x] 验证alpha=0退化、非零梯度、主干/头/指纹同初始化、scheduler全程保持LR比例、checkpoint重载。\n- [ ] 固定12次新训练：4任务各residual/residual_slow；新增2147/244各graph/concat。旧234/2047的4个对照复用并重新审计，不计作新拟合。\n- [ ] 追加唯一早停诊断：234 concat100重跑满100epoch，与旧前34轮一致性比较；总13次新训练，不追加调参/恢复。\n- [ ] 独立审计17个结果（16主比较+1诊断），复算CSV、来源hash，报告负结果和边界。\n\n任务train/valid/cliff：234_Ki=2632/292/128，2047_EC50=452/51/20，2147_Ki=1045/117/46，244_Ki=2229/247/118。seed/split42，官方train内10%验证；不读test标签、不使用旧预训练checkpoint。复用前轮Morgan radius2/2048 bit无手性，单层Linear2048→512+ReLU投影。h=h_graph+alpha*h_fp；alpha是无约束可学习标量，初始化.01，不新增512→512层。保持512输入与原回归头初始化。alpha不会被保证单调增加，残差不保证小，记录每epoch首训练batch残差/graph范数比、训练后alpha。\n\nresidual标准所有LR=1e-4；residual_slow仅fp参数LR=2e-5，graph/head/alpha=1e-4；AdamW wd1e-5/betas(.9,.95)，clip1，MSE、均匀shuffle、batch32、H256/L3/G4/K3；沿用原scheduler时序（首次epoch为base LR，epoch末step），warmup10/100epoch，slow组LR始终为主组.2，末端min_lr也乘.2。patience15、严格最小Overall验证MSE选模；concat100唯一禁用早停，仍按同指标选模。构造dropout0，保留上游LongPoly内部默认.1；不修unused ShortGINE.norm。\n\n初始主干/头seed42，fp独立seed1042，训练重置seed42。拟合预算预先固定；CUDA/非有限/划分错误即停，不自动重试、降级或更换环境。输出artifacts/route_a_residual_20261010与docs/route_a_residual_20261010；不发布。\n\n待检验假设：残差是否优于concat/graph；降低fp LR是否进一步改善残差；100轮concat能否在早停之后改善。跨任务差异不证明样本量因果；17次比较不等于17个独立任务。旧best19/26并非停止epoch，实际停止34/41。bit指纹表示存在/缺失，不是计数或保证正则化。gate新增157万包括fp约105万和gate约52万，不能全算gate模块；gate在234优于concat，动态扰动原因未经测量。小样本验证cliff仅20个（2047），不能声称显著性。\n",
+  "torch": "2.7.1+cu128",
+  "cuda": "12.8",
+  "device": "NVIDIA GeForce RTX 5060 Laptop GPU",
+  "pretrained_checkpoint_used": false
+}
