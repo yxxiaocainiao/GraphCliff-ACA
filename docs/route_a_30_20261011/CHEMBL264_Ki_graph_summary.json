@@ -1,0 +1,21 @@
+{
+  "task": "CHEMBL264_Ki",
+  "arm": "graph",
+  "epochs": 100,
+  "best_epoch": 85,
+  "initial_sha256": "2dfc1f5fa9ff2987f3301786f88beff5baaf348eba8057383340d8c62b2f4201",
+  "graph_initial_sha256": "dd0b8a17c01029b5e06075aac4ea1f8de156d8dbf61c9ac7db69443e53a467d3",
+  "parameters": 6021198,
+  "validation": {
+    "rmse": 0.5677734998835349,
+    "cliff_rmse": 0.6746958134265125
+  },
+  "test": {
+    "rmse": 0.6239558074921677,
+    "cliff_rmse": 0.674664787613811
+  },
+  "test_count": 574,
+  "test_cliff": 239,
+  "resumed": false,
+  "attempt_seconds": 157.03100000001723
+}

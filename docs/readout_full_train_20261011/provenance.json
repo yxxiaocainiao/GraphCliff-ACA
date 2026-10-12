@@ -1,0 +1,28 @@
+{
+  "tasks": [
+    {
+      "task": "CHEMBL234_Ki",
+      "checkpoint_sha256": "e5243925d85fc4e9be75aee921641466d1f13afd98922bf32df965f10b24045e",
+      "data_sha256": "ca8c6bb3c4081c7084439f0e111292d13ef18e117895c65e6ad7f3f2ee4765e8"
+    },
+    {
+      "task": "CHEMBL2047_EC50",
+      "checkpoint_sha256": "d468732b99d0709a8db10e70c08fdbd6a95c8e217578636e70fc7911899e8772",
+      "data_sha256": "62a66fa205500036adc34f431f18ff6c3b4dc2f340e65f9fe6f586f5d6af80b0"
+    },
+    {
+      "task": "CHEMBL2147_Ki",
+      "checkpoint_sha256": "1ce979840e2a231fb03fb53faed49d4946a1c192532f0ed9d1990c6a3eeab5fb",
+      "data_sha256": "fb9e9535e9a5292818354fcff6257f9c3dc2ac18790fb88e0f1587bc8afe1b57"
+    },
+    {
+      "task": "CHEMBL244_Ki",
+      "checkpoint_sha256": "8f9400c43049f8edbfa20f84ab8eb72c3ea5d8ffba30e971cfbedf3946e90e3b",
+      "data_sha256": "38f8b8a3975c9641657caa1dd5b524c71fca229347437a2025426ccd01fc1aa4"
+    }
+  ],
+  "test_labels_read": false,
+  "partition": "official_train",
+  "torch": "2.7.1+cu128",
+  "source_sha256": "dc17c33f817e9ca8c2d0c3e93255f372d295922172d3373bbbe759060f6477d2"
+}

@@ -1,0 +1,21 @@
+{
+  "pdf": "D:\\GraphCliff-ACA\\Kim \u7b49 - 2025 - GraphCliff short-long range gating for modeling critical activity changes caused by subtle molecula.pdf",
+  "pdf_sha256": "824aca892a26c0f5af7fe9b965a5197098d5c39eff9cd0480e924cc5a94c2c3d",
+  "connected_bipartite_eigenvalues": [
+    -1.0,
+    1.0
+  ],
+  "triangle_eigenvalues": [
+    -0.5000000000000002,
+    -0.5,
+    0.9999999999999999
+  ],
+  "triangle_local_perturbation_mean_by_depth": {
+    "0": 0.3333333333333333,
+    "1": 0.3333333333333333,
+    "2": 0.3333333333333333,
+    "10": 0.3333333333333333,
+    "30": 0.3333333333333333
+  },
+  "conclusion": "Connected alone does not guarantee strict spectral contraction; node mixing does not imply whole graph mean difference tends to zero."
+}

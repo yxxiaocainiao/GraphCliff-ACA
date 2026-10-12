@@ -59,3 +59,33 @@
 
 ## 30任务GraphCliff与concat正式匹配比较（2026-10-11）
 用户授权按原仓库官方划分比较30任务，目标北京时间10月11日08:30。固定单seed42/两模型，当前入口默认batch128/min_delta1e-4；完整协议见experiments/route_a_30/task_plan.md。输出artifacts/route_a_30_20261011和docs/route_a_30_20261011。
+
+## 读出支路受控先导（2026-10-11）
+
+用户授权“试试吧”：四个既有任务、graph/final/shallow、seed42，共12次新拟合，使用完整官方train与原test。固定100轮末模型，不用test早停；预检零残差/梯度/参数匹配及CUDA真实更新通过。协议冻结于experiments/readout_pilot/task_plan.md及artifacts/readout_pilot_20261011/manifest.json。结果单独写入docs/readout_pilot_20261011，不能与此前90% train验证早停成绩直接混排。
+
+2026-10-12核验：12/12完成，四任务配对齐全，CSV复算与初始化hash检查通过。graph宏平均0.627449/0.670354，final0.617793/0.657577，shallow0.626620/0.672519。浅层Cliff恶化0.32%，暂停扩大；final Cliff均值改善1.91%但仅2/4任务胜出，单seed不声明稳定改进。详细见docs/readout_pilot_20261011/conclusion.md。冻结源码/先导计划保留原运行版本。
+
+## 结构局部 cosine-margin 先导（2026-10-12）
+
+用户授权按建议先验证损失，再考虑ECFP组合。四既有任务×三初始化种子×MSE/margin，共24次开发拟合；原官方train/test成员不变，先导仅train内验证。完整冻结预算和Go/No-Go规则见experiments/cliff_contrastive/task_plan.md。P0实现/预检，P1训练与独立重载核验；不自动扩大30任务或推送。
+
+P0完成：配对覆盖、全部计划批次、数值公式、零权重/空对梯度、四任务真实CUDA更新与严格重载通过，manifest已冻结。P1已启动后台24次队列；状态/失败位置见artifacts/cliff_contrastive_20261012/status.json。新增脚本/冻结计划、配对覆盖文档；原模型和历史训练入口保留。训练结果仍待完成与独立审计。
+
+首次启动捕获MSE标签广播错误，已终止并保留invalid_shape归档，首组权重/指标不纳入结果。修复原collate标签及逐批形状/数值断言后重新预检冻结；不改变既定损失、超参、任务或划分。
+
+P1完成并核验：24/24、12个完整配对块，自动独立重载审计通过，汇报时24份CSV再次标准库复算通过。开发宏平均MSE→margin：Overall .595254→.586570（改善1.46%）、Cliff .647402→.632448（改善2.31%）；234/2147获益3/3和2/3种子，2047/244仅1/3。未达至少3/4任务获益至少2/3种子的事前门槛，go=false；不自动扩大或组合ECFP。结论docs/cliff_contrastive_20261012/conclusion.md。冻结训练源码/计划保持原运行版本，官方test未评价。
+
+## 四组 ECFP × cosine-margin 先导（2026-10-12）
+
+用户进一步认可四组比较并确认官方划分。旧损失先导的no-go决定保留，此次是新授权的组合检验，不是自动扩大。复用24个纯图对照，只补24次concat与concat_margin；固定四任务/三种子/原开发划分，test不参与。预算、适配方式和事前组合判断见experiments/cliff_ecfp/task_plan.md；P0实现预检，P1后台训练与48模型来源/指标审计。
+
+P0通过：四任务/三seed图初始化与旧对照一致；512维图辅助表示、零权重梯度、fp/head无直接辅助梯度、真实CUDA更新、严格重载通过；两新组各7,135,822参数，manifest冻结。预检后的初始化来源记录改为实际构造哈希，再完整预检冻结（首份prelaunch manifest保留），未执行无效训练。P1补跑24次后台队列已启动，状态artifacts/cliff_ecfp_20261012/status.json；旧24模型全部只读引用。
+
+P1完成：新24/24及重载审计通过，48模型/12四组配对齐全，旧引用hash、初始化和采样一致。Overall/Cliff宏平均：graph_mse .595254/.647402，graph_margin .586570/.632448，concat_mse .595353/.630269，concat_margin .589821/.633271。组合平均Cliff不及两个单独方案，没有任务至少2/3种子同时胜过二者，go=false；暂停此组合，未自动扩任务、调参或test。结论docs/cliff_ecfp_20261012/conclusion.md。
+
+## 完成实验的分支发布（2026-10-12）
+
+用户询问是否可以提交，按既有origin公开发布授权执行。范围仅本仓库：当前codex/route-a-30tasks-20261011上的8个未推送历史提交，加上此次完成实验的代码/计划/报告/必要CSV与JSON复核证据及README_ACA更新。仅推送origin到同名分支，不合并或改默认分支，不写upstream。
+
+P0整理：发布readout、cosine-margin、ECFP组合、30任务及checkpoint/划分诊断的已完成证据；从artifacts只复制有效完成模型的小型history/预测/summary/manifest到docs，不发布权重、运行目录、首次无效训练、根论文PDF、paper_text全文或tools。P1校验：源文件编译、冻结hash/原模型未改、结果CSV复算、允许路径/体积/凭据扫描、暂存diff检查。P2提交推送并核对本地/远端SHA和GitHub分支内容。执行中，不启动新训练。

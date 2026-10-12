@@ -1,0 +1,28 @@
+{
+  "reused_models": 24,
+  "new_completed": 24,
+  "new_total": 24,
+  "paired_blocks": 12,
+  "independent_reload_audited": true,
+  "go": false,
+  "macro": {
+    "graph_mse": {
+      "rmse": 0.5952538012298477,
+      "cliff_rmse": 0.6474020992492563
+    },
+    "graph_margin": {
+      "rmse": 0.5865702091701676,
+      "cliff_rmse": 0.6324475146110626
+    },
+    "concat_mse": {
+      "rmse": 0.595353276568841,
+      "cliff_rmse": 0.6302686879170903
+    },
+    "concat_margin": {
+      "rmse": 0.5898206150674055,
+      "cliff_rmse": 0.6332712447581441
+    }
+  },
+  "tasks_beating_both_single_at_least_two_seeds": 0,
+  "mean_cliff_interaction": 0.01795714147924746
+}

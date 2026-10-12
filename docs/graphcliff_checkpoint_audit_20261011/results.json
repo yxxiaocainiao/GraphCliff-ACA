@@ -1,0 +1,221 @@
+{
+  "records": [
+    {
+      "task": "CHEMBL237_Ki",
+      "checkpoint": "D:\\GraphCliff-ACA\\ckpt\\CHEMBL237_Ki\\20250920_015005\\best_model.pt",
+      "sha256": "cda9a0a2acff9e8b620d090051c6cd0ca33b9e72818c264057d8527700600d99",
+      "rmse": 0.70498261612988,
+      "cliff_rmse": 0.7840020073720829
+    },
+    {
+      "task": "CHEMBL4203_Ki",
+      "checkpoint": "D:\\GraphCliff-ACA\\ckpt\\CHEMBL4203_Ki\\20250920_015008\\best_model.pt",
+      "sha256": "c25717b78c8bf6fe15ebe66833ff579a73234bfbc9bd3b90be1ee5842bd25af0",
+      "rmse": 0.8998980351930462,
+      "cliff_rmse": 1.17666226072852
+    },
+    {
+      "task": "CHEMBL2034_Ki",
+      "checkpoint": "D:\\GraphCliff-ACA\\ckpt\\CHEMBL2034_Ki\\20250920_015011\\best_model.pt",
+      "sha256": "e2ed8d123f22350ccf0dd69eee26336faf15fb5c0832c97e514753a565233624",
+      "rmse": 0.7473940362317268,
+      "cliff_rmse": 0.8580087608419762
+    },
+    {
+      "task": "CHEMBL233_Ki",
+      "checkpoint": "D:\\GraphCliff-ACA\\ckpt\\CHEMBL233_Ki\\20250920_015014\\best_model.pt",
+      "sha256": "a8232121abb2c4bf285578c43bb6d72015f1007ada88ee0250e2b5e2f386c6e1",
+      "rmse": 0.7860034646656096,
+      "cliff_rmse": 0.8803096135424425
+    },
+    {
+      "task": "CHEMBL4616_EC50",
+      "checkpoint": "D:\\GraphCliff-ACA\\ckpt\\CHEMBL4616_EC50\\20250920_015018\\best_model.pt",
+      "sha256": "4e4c388828acde88f1489021b95ff9ca88d2b1e94a81ecd6dbebcba413c98e0d",
+      "rmse": 0.635423526857604,
+      "cliff_rmse": 0.718664413584635
+    },
+    {
+      "task": "CHEMBL287_Ki",
+      "checkpoint": "D:\\GraphCliff-ACA\\ckpt\\CHEMBL287_Ki\\20250920_015021\\best_model.pt",
+      "sha256": "1793de9c182d9da0733b6e976a03f73f7fce2a4171ccb3afc65712a68f9beae1",
+      "rmse": 0.7054738507951811,
+      "cliff_rmse": 0.7976156352897649
+    },
+    {
+      "task": "CHEMBL218_EC50",
+      "checkpoint": "D:\\GraphCliff-ACA\\ckpt\\CHEMBL218_EC50\\20250920_015024\\best_model.pt",
+      "sha256": "f69e7f2b7ea00717e9ac09ad48f32b24dc7bb77804f759005235ddb1e04d1f26",
+      "rmse": 0.6973806157184759,
+      "cliff_rmse": 0.7811442236442299
+    },
+    {
+      "task": "CHEMBL264_Ki",
+      "checkpoint": "D:\\GraphCliff-ACA\\ckpt\\CHEMBL264_Ki\\20250920_015027\\best_model.pt",
+      "sha256": "44949e3fd3432e11db38c14efa0c9699eb84ceb31936a12ee24fe1815b2a6ffc",
+      "rmse": 0.6189206329856116,
+      "cliff_rmse": 0.6715068350612058
+    },
+    {
+      "task": "CHEMBL219_Ki",
+      "checkpoint": "D:\\GraphCliff-ACA\\ckpt\\CHEMBL219_Ki\\20250920_015528\\best_model.pt",
+      "sha256": "9b290da5d64d15fcde394ad2a9d57e009284c25cf67caeb8970dddb2ea6b48f4",
+      "rmse": 0.6636237361543104,
+      "cliff_rmse": 0.7436161246275006
+    },
+    {
+      "task": "CHEMBL2835_Ki",
+      "checkpoint": "D:\\GraphCliff-ACA\\ckpt\\CHEMBL2835_Ki\\20250920_015531\\best_model.pt",
+      "sha256": "11eb9620da09b9bdde7525f4d9cfddeaf1af7da02f2766edf1b3428e884de0d6",
+      "rmse": 0.39586549961743395,
+      "cliff_rmse": 0.7953934821602214
+    },
+    {
+      "task": "CHEMBL2147_Ki",
+      "checkpoint": "D:\\GraphCliff-ACA\\ckpt\\CHEMBL2147_Ki\\20250920_015533\\best_model.pt",
+      "sha256": "061ac869308b6360cb16a42773f6e02245578f9f0ce57c3692debfb02597b9ca",
+      "rmse": 0.5599712631324864,
+      "cliff_rmse": 0.579009745898028
+    },
+    {
+      "task": "CHEMBL231_Ki",
+      "checkpoint": "D:\\GraphCliff-ACA\\ckpt\\CHEMBL231_Ki\\20250920_015537\\best_model.pt",
+      "sha256": "ab220d17f859cdd4b079f213b68408d548988eebf57fc2c08fdd7ddb55d6873d",
+      "rmse": 0.7079486592512986,
+      "cliff_rmse": 0.8659412722770711
+    },
+    {
+      "task": "CHEMBL3979_EC50",
+      "checkpoint": "D:\\GraphCliff-ACA\\ckpt\\CHEMBL3979_EC50\\20250920_015540\\best_model.pt",
+      "sha256": "ec8b2b098c1899bf5fb17633d97946ca2251ef631e48332a6a87ceec91e7fc7a",
+      "rmse": 0.6226616791926737,
+      "cliff_rmse": 0.6536712763269504
+    },
+    {
+      "task": "CHEMBL237_EC50",
+      "checkpoint": "D:\\GraphCliff-ACA\\ckpt\\CHEMBL237_EC50\\20250920_015543\\best_model.pt",
+      "sha256": "f30f4fcd6b3f448cbdc52afdceac94b6a286d2d1a11932ff62a732e71efaf645",
+      "rmse": 0.7074993995837838,
+      "cliff_rmse": 0.7666739380987515
+    },
+    {
+      "task": "CHEMBL244_Ki",
+      "checkpoint": "D:\\GraphCliff-ACA\\ckpt\\CHEMBL244_Ki\\20250920_015546\\best_model.pt",
+      "sha256": "18d6da8eab6c0b61f073e93a7c1ed15c3b208e68de4e7f9b5fcd1506d37db44a",
+      "rmse": 0.6684901825489773,
+      "cliff_rmse": 0.751923471585558
+    },
+    {
+      "task": "CHEMBL4792_Ki",
+      "checkpoint": "D:\\GraphCliff-ACA\\ckpt\\CHEMBL4792_Ki\\20250920_015549\\best_model.pt",
+      "sha256": "78b85c28e2141acc531a7526c12b9b1afc46fa33b8d2a24f76fd78781f4d8cf9",
+      "rmse": 0.6345813788878696,
+      "cliff_rmse": 0.6502822987552691
+    },
+    {
+      "task": "CHEMBL1871_Ki",
+      "checkpoint": "D:\\GraphCliff-ACA\\ckpt\\CHEMBL1871_Ki\\20250920_020317\\best_model.pt",
+      "sha256": "4ff99cba919a55d5907703bdd80b1b20f9b949264f39e917d268f79209879bc7",
+      "rmse": 0.6278786534641795,
+      "cliff_rmse": 0.7973711500711468
+    },
+    {
+      "task": "CHEMBL262_Ki",
+      "checkpoint": "D:\\GraphCliff-ACA\\ckpt\\CHEMBL262_Ki\\20250920_020320\\best_model.pt",
+      "sha256": "9dda6defc8b8a7b3d514fa4399c1d4433e9d3f863a1f23f95c6f27b304792158",
+      "rmse": 0.7522534883836764,
+      "cliff_rmse": 0.701786306724367
+    },
+    {
+      "task": "CHEMBL2047_EC50",
+      "checkpoint": "D:\\GraphCliff-ACA\\ckpt\\CHEMBL2047_EC50\\20250920_020323\\best_model.pt",
+      "sha256": "223d289529889e3b1593812d3aaf9edd2f34c718d79d3bdc42b2f9282580ff4f",
+      "rmse": 0.5923847925028377,
+      "cliff_rmse": 0.6548536000792561
+    },
+    {
+      "task": "CHEMBL239_EC50",
+      "checkpoint": "D:\\GraphCliff-ACA\\ckpt\\CHEMBL239_EC50\\20250920_020326\\best_model.pt",
+      "sha256": "fe4b2ed88370a72751e9223c6e9a7dcc397db150b2902912bd6fc769e3d2a521",
+      "rmse": 0.6701059924704742,
+      "cliff_rmse": 0.7918122891891035
+    },
+    {
+      "task": "CHEMBL2971_Ki",
+      "checkpoint": "D:\\GraphCliff-ACA\\ckpt\\CHEMBL2971_Ki\\20250920_020329\\best_model.pt",
+      "sha256": "74b8ea4d4bdf114c382482f2e9ef974b21749a0cfdf3456d0df537f3031f9581",
+      "rmse": 0.6154149272458845,
+      "cliff_rmse": 0.7775725915435148
+    },
+    {
+      "task": "CHEMBL204_Ki",
+      "checkpoint": "D:\\GraphCliff-ACA\\ckpt\\CHEMBL204_Ki\\20250920_020332\\best_model.pt",
+      "sha256": "b0415d7dd53c4c998ecffed35fa9d2a832d71faaf9d9325996ba846981d33d1c",
+      "rmse": 0.6914483285762517,
+      "cliff_rmse": 0.8212371916300646
+    },
+    {
+      "task": "CHEMBL214_Ki",
+      "checkpoint": "D:\\GraphCliff-ACA\\ckpt\\CHEMBL214_Ki\\20250920_020335\\best_model.pt",
+      "sha256": "0c6e89731114a758aa4800fef50249d83a09183afe50815ae0da68bce9efa29f",
+      "rmse": 0.6210203858244332,
+      "cliff_rmse": 0.7260054824783537
+    },
+    {
+      "task": "CHEMBL1862_Ki",
+      "checkpoint": "D:\\GraphCliff-ACA\\ckpt\\CHEMBL1862_Ki\\20250920_020338\\best_model.pt",
+      "sha256": "fcabc5f92cf581764bdeffa9eeff0110e80c7c180bb155a578609840514c6e66",
+      "rmse": 0.781027649287931,
+      "cliff_rmse": 0.6740269957483104
+    },
+    {
+      "task": "CHEMBL234_Ki",
+      "checkpoint": "D:\\GraphCliff-ACA\\ckpt\\CHEMBL234_Ki\\20250920_020940\\best_model.pt",
+      "sha256": "1f0288359ea60d7bde330b45ffc8ad7e6c0cbf9a78ff7d0a1c6db6d7f56a6fde",
+      "rmse": 0.617521559136646,
+      "cliff_rmse": 0.6316081757223522
+    },
+    {
+      "task": "CHEMBL238_Ki",
+      "checkpoint": "D:\\GraphCliff-ACA\\ckpt\\CHEMBL238_Ki\\20250920_020942\\best_model.pt",
+      "sha256": "761c39da6861493a3a13e78ab6e61b7701843ffc52aa3198036d77fd8b578e4c",
+      "rmse": 0.5965810808447838,
+      "cliff_rmse": 0.7291726207474601
+    },
+    {
+      "task": "CHEMBL235_EC50",
+      "checkpoint": "D:\\GraphCliff-ACA\\ckpt\\CHEMBL235_EC50\\20250920_020946\\best_model.pt",
+      "sha256": "8cb2e44ff25cc4cc4e4a20bac564ab5291eeb7fab1bed9dba11d8af4b2838509",
+      "rmse": 0.65042522615072,
+      "cliff_rmse": 0.7544829448245025
+    },
+    {
+      "task": "CHEMBL4005_Ki",
+      "checkpoint": "D:\\GraphCliff-ACA\\ckpt\\CHEMBL4005_Ki\\20250920_020949\\best_model.pt",
+      "sha256": "bd707b6ef1858a2d6bc134bfd2c4feb31cee4fa835a8ad6194065fe491d53a35",
+      "rmse": 0.6174626868034243,
+      "cliff_rmse": 0.7123605490465523
+    },
+    {
+      "task": "CHEMBL236_Ki",
+      "checkpoint": "D:\\GraphCliff-ACA\\ckpt\\CHEMBL236_Ki\\20250920_020952\\best_model.pt",
+      "sha256": "d5797e5dd021dfb0e5cd262fcac9752c50bf7bcd2b2a20c05785600d4b7c7f66",
+      "rmse": 0.6964290312673164,
+      "cliff_rmse": 0.7850536717501746
+    },
+    {
+      "task": "CHEMBL228_Ki",
+      "checkpoint": "D:\\GraphCliff-ACA\\ckpt\\CHEMBL228_Ki\\20250920_020955\\best_model.pt",
+      "sha256": "b7a58c88cf63665ef2ade8e2aad51f7fe43c2d2f80a23c453fa776eade1693d3",
+      "rmse": 0.6511814293394703,
+      "cliff_rmse": 0.6738819996509768
+    }
+  ],
+  "completed": 30,
+  "aggregate": {
+    "rmse": 0.6645751269414666,
+    "cliff_rmse": 0.756855030966678
+  },
+  "upstream_archive_hash_verified": false,
+  "training_provenance_verified": false
+}

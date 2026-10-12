@@ -1,0 +1,38 @@
+[
+  {
+    "task": "CHEMBL234_Ki",
+    "positive_pairs": 417,
+    "negative_pairs": 220,
+    "train_pair_sha256": "5102562f326b0d435c1cfeccdf9c640e359e1c8c28f9a1cf85c51cc106be7393",
+    "data_sha256": "ca8c6bb3c4081c7084439f0e111292d13ef18e117895c65e6ad7f3f2ee4765e8",
+    "train_count": 2632,
+    "valid_count": 292
+  },
+  {
+    "task": "CHEMBL2047_EC50",
+    "positive_pairs": 83,
+    "negative_pairs": 24,
+    "train_pair_sha256": "790a0379c0e35fb4bc2215df0227c32e4d73bcd0fab8ae2fac0294302ec26846",
+    "data_sha256": "62a66fa205500036adc34f431f18ff6c3b4dc2f340e65f9fe6f586f5d6af80b0",
+    "train_count": 452,
+    "valid_count": 51
+  },
+  {
+    "task": "CHEMBL2147_Ki",
+    "positive_pairs": 92,
+    "negative_pairs": 28,
+    "train_pair_sha256": "d881478da1981ee636bd2448b93ebcba6b3a7b3358214aa67e08e9557deb9413",
+    "data_sha256": "fb9e9535e9a5292818354fcff6257f9c3dc2ac18790fb88e0f1587bc8afe1b57",
+    "train_count": 1045,
+    "valid_count": 117
+  },
+  {
+    "task": "CHEMBL244_Ki",
+    "positive_pairs": 467,
+    "negative_pairs": 352,
+    "train_pair_sha256": "964e6f88b552c1c5dadb298a7d1a644e9fb7bbcae29065a6910650bd04a2316c",
+    "data_sha256": "38f8b8a3975c9641657caa1dd5b524c71fca229347437a2025426ccd01fc1aa4",
+    "train_count": 2229,
+    "valid_count": 247
+  }
+]

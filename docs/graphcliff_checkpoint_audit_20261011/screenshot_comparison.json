@@ -1,0 +1,49 @@
+{
+  "scope": "GraphCliff column only; screenshot numbers manually transcribed",
+  "matching_rmse": 26,
+  "matching_cliff_rmse": 27,
+  "differences": [
+    {
+      "task": "CHEMBL237_Ki",
+      "metric": "cliff_rmse",
+      "screenshot": 0.783,
+      "replay": 0.7840020073720829
+    },
+    {
+      "task": "CHEMBL4616_EC50",
+      "metric": "rmse",
+      "screenshot": 0.634,
+      "replay": 0.635423526857604
+    },
+    {
+      "task": "CHEMBL287_Ki",
+      "metric": "rmse",
+      "screenshot": 0.706,
+      "replay": 0.7054738507951811
+    },
+    {
+      "task": "CHEMBL264_Ki",
+      "metric": "cliff_rmse",
+      "screenshot": 0.671,
+      "replay": 0.6715068350612058
+    },
+    {
+      "task": "CHEMBL237_EC50",
+      "metric": "rmse",
+      "screenshot": 0.708,
+      "replay": 0.7074993995837838
+    },
+    {
+      "task": "CHEMBL4792_Ki",
+      "metric": "cliff_rmse",
+      "screenshot": 0.651,
+      "replay": 0.6502822987552691
+    },
+    {
+      "task": "CHEMBL236_Ki",
+      "metric": "rmse",
+      "screenshot": 0.697,
+      "replay": 0.6964290312673164
+    }
+  ]
+}

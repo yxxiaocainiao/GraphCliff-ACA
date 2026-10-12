@@ -1,0 +1,42 @@
+[
+  {
+    "task": "CHEMBL2047_EC50",
+    "pairs": 2,
+    "molecules": 4,
+    "controlled": 2,
+    "edited_retention": 0.41666666666666663,
+    "matched_edit": 0.41666666666666663,
+    "control": 0.6086309523809523,
+    "post_gap_decreased": 1
+  },
+  {
+    "task": "CHEMBL2147_Ki",
+    "pairs": 4,
+    "molecules": 8,
+    "controlled": 4,
+    "edited_retention": 0.375,
+    "matched_edit": 0.375,
+    "control": 0.8931818181818182,
+    "post_gap_decreased": 2
+  },
+  {
+    "task": "CHEMBL234_Ki",
+    "pairs": 4,
+    "molecules": 8,
+    "controlled": 3,
+    "edited_retention": 0.75,
+    "matched_edit": 0.6666666666666666,
+    "control": 0.32051282051282054,
+    "post_gap_decreased": 0
+  },
+  {
+    "task": "CHEMBL244_Ki",
+    "pairs": 8,
+    "molecules": 15,
+    "controlled": 8,
+    "edited_retention": 0.45625,
+    "matched_edit": 0.45625,
+    "control": 0.5147253787878788,
+    "post_gap_decreased": 1
+  }
+]

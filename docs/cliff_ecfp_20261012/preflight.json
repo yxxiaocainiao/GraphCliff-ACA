@@ -1,0 +1,42 @@
+[
+  {
+    "task": "CHEMBL234_Ki",
+    "core_initial_sha256": {
+      "42": "dd0b8a17c01029b5e06075aac4ea1f8de156d8dbf61c9ac7db69443e53a467d3",
+      "43": "c20837f174f472b02fde5891f4ef3bbc568602c64a105f3c8a85873bfde09532",
+      "44": "ce83b5d6d6190e3dcea5c84100a4047100b1aae227e5f80ea15513e285edb7b5"
+    },
+    "parameters": 7135822,
+    "checks": "passed"
+  },
+  {
+    "task": "CHEMBL2047_EC50",
+    "core_initial_sha256": {
+      "42": "dd0b8a17c01029b5e06075aac4ea1f8de156d8dbf61c9ac7db69443e53a467d3",
+      "43": "c20837f174f472b02fde5891f4ef3bbc568602c64a105f3c8a85873bfde09532",
+      "44": "ce83b5d6d6190e3dcea5c84100a4047100b1aae227e5f80ea15513e285edb7b5"
+    },
+    "parameters": 7135822,
+    "checks": "passed"
+  },
+  {
+    "task": "CHEMBL2147_Ki",
+    "core_initial_sha256": {
+      "42": "dd0b8a17c01029b5e06075aac4ea1f8de156d8dbf61c9ac7db69443e53a467d3",
+      "43": "c20837f174f472b02fde5891f4ef3bbc568602c64a105f3c8a85873bfde09532",
+      "44": "ce83b5d6d6190e3dcea5c84100a4047100b1aae227e5f80ea15513e285edb7b5"
+    },
+    "parameters": 7135822,
+    "checks": "passed"
+  },
+  {
+    "task": "CHEMBL244_Ki",
+    "core_initial_sha256": {
+      "42": "dd0b8a17c01029b5e06075aac4ea1f8de156d8dbf61c9ac7db69443e53a467d3",
+      "43": "c20837f174f472b02fde5891f4ef3bbc568602c64a105f3c8a85873bfde09532",
+      "44": "ce83b5d6d6190e3dcea5c84100a4047100b1aae227e5f80ea15513e285edb7b5"
+    },
+    "parameters": 7135822,
+    "checks": "passed"
+  }
+]

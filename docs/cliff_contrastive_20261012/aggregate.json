@@ -1,0 +1,18 @@
+{
+  "completed": 24,
+  "total": 24,
+  "paired_blocks": 12,
+  "independent_reload_audited": true,
+  "rmse": {
+    "mse": 0.5952538012298477,
+    "margin": 0.5865702091701676,
+    "relative_improvement": 0.014588049739017395
+  },
+  "cliff": {
+    "mse": 0.6474020992492563,
+    "margin": 0.6324475146110626,
+    "relative_improvement": 0.023099376192223353
+  },
+  "tasks_winning_at_least_two_seeds": 2,
+  "go": false
+}

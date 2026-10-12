@@ -1,0 +1,32 @@
+[
+  {
+    "group": "all",
+    "pairs": 140,
+    "controlled_pairs": 136,
+    "tasks": 4,
+    "edited_retention": 0.6511224489795917,
+    "retention_minus_control": 0.0709439687731367,
+    "selected_gap_decreased": 17,
+    "actual_gap_decreased": 22
+  },
+  {
+    "group": "cliff",
+    "pairs": 18,
+    "controlled_pairs": 17,
+    "tasks": 4,
+    "edited_retention": 0.499074074074074,
+    "retention_minus_control": -0.11094101976454918,
+    "selected_gap_decreased": 4,
+    "actual_gap_decreased": 4
+  },
+  {
+    "group": "near_equal",
+    "pairs": 62,
+    "controlled_pairs": 60,
+    "tasks": 4,
+    "edited_retention": 0.7044930875576039,
+    "retention_minus_control": 0.13330719840973657,
+    "selected_gap_decreased": 5,
+    "actual_gap_decreased": 6
+  }
+]

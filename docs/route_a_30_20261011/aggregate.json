@@ -1,0 +1,18 @@
+{
+  "completed_models": 60,
+  "paired_tasks": 30,
+  "rmse": {
+    "graph": 0.6985315368197073,
+    "concat": 0.6986178623417432,
+    "wins": 16,
+    "ties": 0,
+    "losses": 14
+  },
+  "cliff_rmse": {
+    "graph": 0.7980109356396444,
+    "concat": 0.7893350383272781,
+    "wins": 14,
+    "ties": 0,
+    "losses": 16
+  }
+}

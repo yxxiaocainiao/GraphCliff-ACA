@@ -46,6 +46,28 @@
 - 本轮模型 forward、optimizer 步、训练、test 评价均为 0；未修改或移动用户权重。
 # 2026-10-10 ACA 接入与先导
 
+## 2026-10-12 结构局部 cosine-margin 新先导
+
+用户授权按论文不足先单独试损失，暂不组合ECFP。实验设计采用experimental-design的匹配区组/重复原则；expression-skill/planning-with-files在本机技能根仍未找到，沿用仓库计划文件。新入口experiments/cliff_contrastive/run.py复用base.development/model/evaluate以及aca_local指纹和梯度探针。原模型/历史入口不改；四任务×seed42/43/44×MSE/margin共24次，仅官方train内验证，不读test标签或作者权重。
+
+损失采用PyTorch原生CosineEmbeddingLoss：结构T>=.8、活性差<.2为正例；结构T>=.8、活性差>=1为负例。正负类各均值后等权，margin=.5、系数=.01；直接约束原512维分子表示，无额外参数。这些是冻结试验设定，不是论文给出的配方；与之前ACA相比改变了多个机制，不据新旧差值作单项归因。
+
+预检通过：234/2047/2147/244训练侧无向正负对417/220、83/24、92/28、467/352；开发train/valid为2632/292、452/51、1045/117、2229/247。全部三seed×100轮采样能注入两类；公式/空对/零权重梯度/真实三步CUDA更新/严格重载检查通过。官方train=开发train+valid，test成员不变；辅助约束只用开发train标签。两组匹配批次且普通分子每轮一次，注入成员额外重复；记录采样hash/梯度和几何统计。开发选模min_delta=.0001，与无该阈值的绝对最低误差checkpoint不完全等同。
+
+预算/扩大门槛事前写入experiments/cliff_contrastive/task_plan.md并与源码hash冻结在artifacts/cliff_contrastive_20261012/manifest.json。队列已后台启动，进度写status.json，失败停止无自动重试；结果写docs/cliff_contrastive_20261012。暂不能称已有效。未新增依赖、未push、未启动全train/test或30任务。
+
+首组日志人工检查发现新入口把训练标签另建为[B]，与模型[B,1]输出在MSE中错误广播。立即终止本队列的两个Python进程，首组未完成结果全部作废，旧目录移至artifacts/cliff_contrastive_20261012_invalid_shape保留。修复为直接复用collate_graphs原[B,1]标签，每批断言形状一致且与所采行标签逐值相等；重新预检、冻结和从零启动，不复用无效权重。最初预检使用collate标签，因此没有覆盖训练循环另建标签的错误；运行首组检查捕获了该问题。
+
+完成汇报：24/24有效模型，12个配对块，独立重载审计及24份CSV再次复算通过，队列complete且无剩余进程。Overall均值.595254→.586570（+1.46%改善），Cliff .647402→.632448（+2.31%改善）；Cliff7/12配对块胜出，234/2047/2147/244获益种子数3/1/2/1。预定任务稳定性门槛仅2/4而非>=3/4，因此go=false；平均正信号不足以自动扩大。验证侧严格负对234/2047/2147/244仅4/0/0/5，表示分离的泛化机制证据稀少。当前为官方train内验证开发结果，未做完整train/test或ECFP组合，不宣称超过论文。详细表与边界见docs/cliff_contrastive_20261012/conclusion.md。
+
+## 2026-10-12 用户确认四组 ECFP×margin 比较
+
+新增独立experiments/cliff_ecfp适配，复用原route_a.Predictor('concat')及冻结cliff_contrastive训练循环；用独立模块命名空间替换接口，不改旧源码/运行文件。辅助损失仍约束graph pooled512，训练内Morgan筛配对与原规则一致。纯图24模型复用，仅新24拟合；四任务三seed、官方train内10%验证，不读test标签。所有旧权重/summary/CSV/history及源码hash冻结，新concat图初始化与对应旧纯图一致，两个拼接组全模型初始化一致；FP和新头第一层沿用既有seed1042，未声称三seed同时重抽所有参数。
+
+四任务预检通过：零权重梯度、拼接值、h512辅助入口、辅助梯度不直接进fp/head、真实3步GPU更新、strict重载。两concat模型各7,135,822参数；额外容量约1.11M，拼接vs纯图仍有容量混杂，concat_mse vs concat_margin容量匹配。实际初始哈希由构造时记录，与旧对照核验，不把预期值冒充实测。预检及源码manifest已冻结；24次队列启动，失败停止无自动重试。结果docs/cliff_ecfp_20261012；暂无组合有效结论。组合门槛须同时胜过单独fp和单独loss，详见冻结计划。未新装依赖、未改其他仓库、未push。
+
+四组完成：24个新模型独立重载审计通过，48总模型/12完整配对；状态complete无残余训练进程。Overall/Cliff宏平均graph_mse .595254/.647402、graph_margin .586570/.632448、concat_mse .595353/.630269、concat_margin .589821/.633271。组合Cliff较单独拼接/单独损失分别恶化约.48%/.13%；无任务至少2/3种子同时胜过二者，go=false。当前组合没有稳定互补证据，不据小均值差声称显著或把原因归为梯度冲突。官方test未评价，仍是同固定train内验证的开发结果；不自动扩大。结论docs/cliff_ecfp_20261012/conclusion.md。
+
 六次拟合与独立核验完成。Cliff RMSE（MSE / MAE / ACA）：CHEMBL234=.622703/.632913/.694268；CHEMBL2047=.515139/.565489/.597020。ACA 相对 MAE 的 Cliff 恶化9.69%/5.58%，Overall 恶化12.15%/3.38%。两任务每个 ACA epoch 均有候选，回归与三元组 loss 均下降，但没有验证收益。仅单种子先导，暂停扩大该直接配方，不宣称所有监督对比学习无效。
 
 六个重载预测最大误差 <1e-5（实际浮点舍入约1e-15），行 ID、标签和指标均匹配；报告入口另用 math.fsum 从 CSV 重算两种 RMSE。当前 graphcliff 环境无 sklearn，未安装新依赖。30 个用户 checkpoint 对初始审计 SHA 复核全未变；原模型/数据代码无改动。阶段证据与图保存在 docs/aca_pilot_20261010，完整权重和日志在 artifacts，均属于本仓库。
@@ -68,3 +90,6 @@ ACANet 固定源码 4c43e602 的 clsar/model/loss.py 经官方 raw 在线下载�
 
 ## 30任务夜间队列
 run.sh唯一30任务清单，训练内留出后总35020分子；原官方train/test标记保留。两组均使用当前main.py默认超参而非先导batch32。最终test不参与选模；与论文历史训练是否一致未知，不宣称精确复现。每5轮快照和有限CUDA恢复属于操作性恢复，不调参。压力检查两组每批约.09-.10秒，100轮上限外推训练约1.5小时；含启动/写盘/评价按2-4小时预留，08:30不保证。
+
+## 2026-10-11 论文基线差异核验
+用户指出本轮图对照与论文不一致。已有30个checkpoint以同一test评价函数回放得到宏平均RMSE0.664575/Cliff0.756855，三位小数对应截图0.665/0.757，234/2047/2147逐任务抽查一致。权重与数据hash、严格载入、CSV指标复算通过。本轮60次从随机初始化训练，图对照0.698532/0.798011，concat0.698618/0.789335；不能宣称超过论文基线。历史训练条件差距尚未查清，不单项归因、不启动追加训练。报告docs/graphcliff_checkpoint_audit_20261011/report.md。原代码/权重/数据/其他工程未改。

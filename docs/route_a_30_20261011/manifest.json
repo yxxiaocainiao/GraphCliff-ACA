@@ -1,0 +1,268 @@
+{
+  "tasks": [
+    {
+      "task": "CHEMBL237_Ki",
+      "train": 1873,
+      "valid": 208,
+      "valid_cliff": 89,
+      "test": 522,
+      "data_sha256": "fa0a5e47dcd6038240d9ae99ca8ac0812a7f600d59325d5401c0efee7bebd769"
+    },
+    {
+      "task": "CHEMBL4203_Ki",
+      "train": 524,
+      "valid": 58,
+      "valid_cliff": 5,
+      "test": 149,
+      "data_sha256": "c7cc76a283605d974ee2ee672310d59f4ee7fe723090e722499cb1429f8f535d"
+    },
+    {
+      "task": "CHEMBL2034_Ki",
+      "train": 538,
+      "valid": 60,
+      "valid_cliff": 20,
+      "test": 152,
+      "data_sha256": "12ca98cad2535dbfc731344822ad035be8a75a456f4b17770c07af92fed572df"
+    },
+    {
+      "task": "CHEMBL233_Ki",
+      "train": 2260,
+      "valid": 252,
+      "valid_cliff": 104,
+      "test": 630,
+      "data_sha256": "732af36c6cbe340822d9261d2f6cf9907ce59be12463a65bb3772ecc492c0250"
+    },
+    {
+      "task": "CHEMBL4616_EC50",
+      "train": 489,
+      "valid": 54,
+      "valid_cliff": 28,
+      "test": 139,
+      "data_sha256": "d408e94001ec78d39a815b1e7e3071f4a1ca749dcc2cbb44566a4edb63b0779e"
+    },
+    {
+      "task": "CHEMBL287_Ki",
+      "train": 955,
+      "valid": 106,
+      "valid_cliff": 40,
+      "test": 267,
+      "data_sha256": "c7ff1d8027b16e118cb57022271322057efeaeaed65a550a41a57d7c6228aab8"
+    },
+    {
+      "task": "CHEMBL218_EC50",
+      "train": 741,
+      "valid": 82,
+      "valid_cliff": 29,
+      "test": 208,
+      "data_sha256": "6e0e5b7bda48000f86b3010dff1e1a6e3bce125d17d9a75364f2f7323c826499"
+    },
+    {
+      "task": "CHEMBL264_Ki",
+      "train": 2059,
+      "valid": 229,
+      "valid_cliff": 95,
+      "test": 574,
+      "data_sha256": "82b1ad6089cb8f8bbeb1c26ed12ff6f7a22238e3249d1ee6f8b53682630f02c9"
+    },
+    {
+      "task": "CHEMBL219_Ki",
+      "train": 1342,
+      "valid": 149,
+      "valid_cliff": 59,
+      "test": 374,
+      "data_sha256": "1c522c35a39827a882d4654718c48edaeb8ebbec1697a6a302c8cf5182d7f88e"
+    },
+    {
+      "task": "CHEMBL2835_Ki",
+      "train": 440,
+      "valid": 49,
+      "valid_cliff": 5,
+      "test": 126,
+      "data_sha256": "554735e1663e1f185e4530221ae6eb3980d0eb03f6ecfe7d45d2f9cb79ac143a"
+    },
+    {
+      "task": "CHEMBL2147_Ki",
+      "train": 1045,
+      "valid": 117,
+      "valid_cliff": 46,
+      "test": 294,
+      "data_sha256": "fb9e9535e9a5292818354fcff6257f9c3dc2ac18790fb88e0f1587bc8afe1b57"
+    },
+    {
+      "task": "CHEMBL231_Ki",
+      "train": 698,
+      "valid": 78,
+      "valid_cliff": 19,
+      "test": 197,
+      "data_sha256": "f50fae6c2b7bff9c1e82c0e3eb31472cdbd7068f2eee362b973895d2fa00c7b0"
+    },
+    {
+      "task": "CHEMBL3979_EC50",
+      "train": 810,
+      "valid": 89,
+      "valid_cliff": 37,
+      "test": 226,
+      "data_sha256": "49c33ef7633b2a9c16c59229276ce6f7e68c8486b9d5354073d81eb55985e82d"
+    },
+    {
+      "task": "CHEMBL237_EC50",
+      "train": 686,
+      "valid": 76,
+      "valid_cliff": 36,
+      "test": 193,
+      "data_sha256": "769f9848469383cb8758feaafce269727e0b556a01e439597dc6409563396daf"
+    },
+    {
+      "task": "CHEMBL244_Ki",
+      "train": 2229,
+      "valid": 247,
+      "valid_cliff": 118,
+      "test": 621,
+      "data_sha256": "38f8b8a3975c9641657caa1dd5b524c71fca229347437a2025426ccd01fc1aa4"
+    },
+    {
+      "task": "CHEMBL4792_Ki",
+      "train": 1057,
+      "valid": 117,
+      "valid_cliff": 63,
+      "test": 297,
+      "data_sha256": "0291cb9ebf1b19c13c2662bd57842c61f145bd0fa8e57153864ec54bde9d7bf8"
+    },
+    {
+      "task": "CHEMBL1871_Ki",
+      "train": 472,
+      "valid": 53,
+      "valid_cliff": 13,
+      "test": 134,
+      "data_sha256": "f9b60a94bffa30a2b6e4ee14a3ecc2fc20a6d377f5d70ba8955974fa83b77db3"
+    },
+    {
+      "task": "CHEMBL262_Ki",
+      "train": 614,
+      "valid": 69,
+      "valid_cliff": 13,
+      "test": 173,
+      "data_sha256": "0b65b6ed9dfd6f5ece98373d3bdd01b422e6f571ceb43a659517d795f483c964"
+    },
+    {
+      "task": "CHEMBL2047_EC50",
+      "train": 452,
+      "valid": 51,
+      "valid_cliff": 20,
+      "test": 128,
+      "data_sha256": "62a66fa205500036adc34f431f18ff6c3b4dc2f340e65f9fe6f586f5d6af80b0"
+    },
+    {
+      "task": "CHEMBL239_EC50",
+      "train": 1236,
+      "valid": 138,
+      "valid_cliff": 56,
+      "test": 347,
+      "data_sha256": "cba26e88039fc3c74786a5d02bed71c7e0940c6860c1550e0750bd7c175a18c8"
+    },
+    {
+      "task": "CHEMBL2971_Ki",
+      "train": 701,
+      "valid": 78,
+      "valid_cliff": 13,
+      "test": 197,
+      "data_sha256": "79ef70ff01da3ddb168b3764bdf23a42d1fc488730a9ec917dc94e4104d4e203"
+    },
+    {
+      "task": "CHEMBL204_Ki",
+      "train": 1981,
+      "valid": 220,
+      "valid_cliff": 87,
+      "test": 553,
+      "data_sha256": "5165f6b4c00c2f686279af81d873f010c93f7c7aac5bfb76b6a0040145237eff"
+    },
+    {
+      "task": "CHEMBL214_Ki",
+      "train": 2386,
+      "valid": 265,
+      "valid_cliff": 98,
+      "test": 666,
+      "data_sha256": "d9ab0cc4c85a711883b8c2956a7a5488dc7d5e8472af3e1ea25f03ed7a560391"
+    },
+    {
+      "task": "CHEMBL1862_Ki",
+      "train": 570,
+      "valid": 63,
+      "valid_cliff": 26,
+      "test": 161,
+      "data_sha256": "6b733f030242338954a942e42e161569de86c3ea5da5f77a8a3eced9dc69b5f4"
+    },
+    {
+      "task": "CHEMBL234_Ki",
+      "train": 2632,
+      "valid": 292,
+      "valid_cliff": 128,
+      "test": 733,
+      "data_sha256": "ca8c6bb3c4081c7084439f0e111292d13ef18e117895c65e6ad7f3f2ee4765e8"
+    },
+    {
+      "task": "CHEMBL238_Ki",
+      "train": 755,
+      "valid": 84,
+      "valid_cliff": 21,
+      "test": 213,
+      "data_sha256": "d30faaca26998784b0fb2e02e0b6ff62e4782aaa03b7f51abd13e5056663b717"
+    },
+    {
+      "task": "CHEMBL235_EC50",
+      "train": 1689,
+      "valid": 188,
+      "valid_cliff": 71,
+      "test": 472,
+      "data_sha256": "705f5576e36a5243f2ae4421927b73ad0e5f5551ec9e52d492f08ab1143ce37d"
+    },
+    {
+      "task": "CHEMBL4005_Ki",
+      "train": 690,
+      "valid": 77,
+      "valid_cliff": 32,
+      "test": 193,
+      "data_sha256": "ce2d3fa15311917a34e8ba5e5172b18c9a178a89a7e717b682039c6982a5eaf2"
+    },
+    {
+      "task": "CHEMBL236_Ki",
+      "train": 1870,
+      "valid": 207,
+      "valid_cliff": 81,
+      "test": 521,
+      "data_sha256": "09ddd8be1d86f8ecdb4e6f9e016f3aa254f0a53b67f0cda4a0e390df575685a2"
+    },
+    {
+      "task": "CHEMBL228_Ki",
+      "train": 1226,
+      "valid": 136,
+      "valid_cliff": 51,
+      "test": 342,
+      "data_sha256": "94d46b50cb12dda27e38ef95594a1dc7e3719fec87c6a0b3530ce35d2e842250"
+    }
+  ],
+  "total_train": 35020,
+  "seed": 42,
+  "split_seed": 42,
+  "protocol": "# 30任务匹配比较（2026-10-11，目标北京时间08:30）\n\n- [ ] 核对run.sh的30个任务、官方split、源码/输入hash和GPU真实批次压力检查。\n- [ ] 冻结graph/concat唯一两组和当前main.py默认训练协议，测试快照恢复与指标复算。\n- [ ] 启动独立后台顺序队列，60次seed42拟合；每组独立进程，自动保留日志/状态/5轮快照。\n- [ ] 各组训练完成后重载固定最佳checkpoint，验证回放并一次性评价官方test；生成30任务宏平均与胜平负。\n\n任务仅run.sh名单，不扩展其他CSV。两组独立从同图主干初始化训练，不使用作者/用户旧权重，不把旧先导当新结果。Morgan radius2/2048 bit无手性，Linear2048→512+ReLU；concat1024→128回归头。沿用当前main.py：batch128，seed/split42，train内cliff分层留出10%；H256/L3/G4/K3/dropout0（LongPoly内部.1保留）；AdamW lr1e-4/wd1e-5/betas(.9,.95)，clip1，warmup10/100epochs/min_lr1e-6，epoch末scheduler.step(epoch)（epoch从1起），patience15/min_delta1e-4。train/valid DataLoader共用seed42的generator，沿用原入口随机初始化后的RNG，不叠加其他loss/modules。区别于先导batch32/min_delta0/scheduler从0起；不与先导数值直接归因。\n\n官方test不用于训练/调参/选模，仅完成固定checkpoint之后评价，禁止根据test结果选分支、任务、epoch或追加调参。当前仓库划分/入口协议不等于论文历史训练协议已完全复现。\n\n60次主拟合；仅CUDA故障允许每组最多1次操作性恢复，全队列最多3次恢复。保存完整model/optimizer/best/RNG/loader状态，每5epoch覆盖本组latest快照，恢复从快照继续，至多重放4轮；无快照则同seed从头重跑。第二次CUDA错误、非CUDA错误或总恢复预算耗尽即停止队列并报告缺失，不自动改batch/精度/环境/驱动，不以失败尝试择优。恢复日志全部保留。睡眠/关机/ GPU故障可能破坏08:30期限，时间估计不是保证。\n\n输入benchmark_data，输出artifacts/route_a_30_20261011和docs/route_a_30_20261011，均在本仓库；旧模型/ACA/先导/tools/其他项目不改、不发布。状态status.json、日志logs/，完成后汇总summary.csv/report.md。输出JSON原子替换，原权重不覆盖。快照仅加载本队列自己的可信文件（含Python/NumPy RNG对象）。\n",
+  "source_sha256": {
+    "model.py": "7e1de8c890dee7275410041456313dae27ec7add829e8f5f741a385deac1a6d6",
+    "dataset.py": "466ff02d228d897725e9798f5d8e3ac04055c5310f1b2df14db9917ef7b02117",
+    "dataset_utils.py": "49038a72914647412b183acafcaca03041fd17256233466fa9c9b438ffbea95f",
+    "main.py": "fae1d1086d1441b59b8dc3cddfb1c318ba31b153c7af4ff1fc24fc48db448166",
+    "train.py": "d7134d266b3627a14fb6c49434f380df0402c4728518f77e45346e975124071b",
+    "run.sh": "9c9f43f8c3705973426ab9a37a2128cf5cfb07194347cd58b93a0f8309444686",
+    "experiments/aca/run.py": "da9fadd5776927b7c011dfb61532c8447f633333dbfa5bfc1147cb9f24de1900",
+    "experiments/route_a/pilot.py": "c9714985bb17d9d868a5294da19d1225dbfa6a08ef58c8caee5354b940f6d943",
+    "experiments/route_a_30/run.py": "b13b3b09f60b0f47bafc6e81ed9b6531bcc7a0aed8c15c1faf6d8978836e9d05"
+  },
+  "timing_seconds_per_batch": {
+    "graph": 0.09454000000027009,
+    "concat": 0.0923399999999674
+  },
+  "estimated_training_upper_seconds": 5400.832000006863,
+  "preflight": "passed",
+  "torch": "2.7.1+cu128",
+  "cuda": "12.8",
+  "device": "NVIDIA GeForce RTX 5060 Laptop GPU"
+}

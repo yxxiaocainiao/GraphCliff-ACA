@@ -1,0 +1,21 @@
+{
+  "task": "CHEMBL204_Ki",
+  "arm": "graph",
+  "epochs": 99,
+  "best_epoch": 84,
+  "initial_sha256": "2dfc1f5fa9ff2987f3301786f88beff5baaf348eba8057383340d8c62b2f4201",
+  "graph_initial_sha256": "dd0b8a17c01029b5e06075aac4ea1f8de156d8dbf61c9ac7db69443e53a467d3",
+  "parameters": 6021198,
+  "validation": {
+    "rmse": 0.6747010520263226,
+    "cliff_rmse": 0.7961420806069336
+  },
+  "test": {
+    "rmse": 0.7217439716885147,
+    "cliff_rmse": 0.8606832705463521
+  },
+  "test_count": 553,
+  "test_cliff": 220,
+  "resumed": false,
+  "attempt_seconds": 190.15600000001723
+}

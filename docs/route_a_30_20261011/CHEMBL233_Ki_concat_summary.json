@@ -1,0 +1,21 @@
+{
+  "task": "CHEMBL233_Ki",
+  "arm": "concat",
+  "epochs": 39,
+  "best_epoch": 24,
+  "initial_sha256": "991ee15bef589a2c33b3b2851878c7d040c3f4bc6df19e50caff272fffdf2d7c",
+  "graph_initial_sha256": "dd0b8a17c01029b5e06075aac4ea1f8de156d8dbf61c9ac7db69443e53a467d3",
+  "parameters": 7135822,
+  "validation": {
+    "rmse": 0.747077199677542,
+    "cliff_rmse": 0.867127934189112
+  },
+  "test": {
+    "rmse": 0.7863634419960474,
+    "cliff_rmse": 0.8876138243202469
+  },
+  "test_count": 630,
+  "test_cliff": 259,
+  "resumed": false,
+  "attempt_seconds": 88.81299999996554
+}

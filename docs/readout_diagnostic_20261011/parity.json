@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "steps": [
+    {
+      "step": 1,
+      "output_max_error": 0.0,
+      "gradient_max_error": 0.0,
+      "weight_max_error": 0.0
+    },
+    {
+      "step": 2,
+      "output_max_error": 0.0,
+      "gradient_max_error": 0.0,
+      "weight_max_error": 0.0
+    }
+  ],
+  "scope": "same real batch, CUDA RNG, MSE, clipping, AdamW; not full training equivalence"
+}

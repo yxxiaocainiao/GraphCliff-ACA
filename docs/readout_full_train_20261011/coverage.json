@@ -1,0 +1,58 @@
+[
+  {
+    "task": "CHEMBL234_Ki",
+    "partition": "official_train",
+    "molecules": 2924,
+    "replay_max_error": null,
+    "candidates": 1779,
+    "attempted": 200,
+    "accepted": 20,
+    "skipped": {
+      "timeout": 14,
+      "ambiguous": 30,
+      "edit_size": 136
+    }
+  },
+  {
+    "task": "CHEMBL2047_EC50",
+    "partition": "official_train",
+    "molecules": 503,
+    "replay_max_error": null,
+    "candidates": 307,
+    "attempted": 176,
+    "accepted": 40,
+    "skipped": {
+      "timeout": 42,
+      "ambiguous": 6,
+      "edit_size": 88
+    }
+  },
+  {
+    "task": "CHEMBL2147_Ki",
+    "partition": "official_train",
+    "molecules": 1162,
+    "replay_max_error": null,
+    "candidates": 351,
+    "attempted": 89,
+    "accepted": 40,
+    "skipped": {
+      "timeout": 2,
+      "ambiguous": 4,
+      "edit_size": 43
+    }
+  },
+  {
+    "task": "CHEMBL244_Ki",
+    "partition": "official_train",
+    "molecules": 2476,
+    "replay_max_error": null,
+    "candidates": 2118,
+    "attempted": 158,
+    "accepted": 40,
+    "skipped": {
+      "timeout": 34,
+      "ambiguous": 7,
+      "edit_size": 77
+    }
+  }
+]

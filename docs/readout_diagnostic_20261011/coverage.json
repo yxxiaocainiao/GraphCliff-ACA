@@ -1,0 +1,54 @@
+[
+  {
+    "task": "CHEMBL234_Ki",
+    "validation": 292,
+    "replay_max_error": 8.881784197001252e-16,
+    "candidates": 20,
+    "attempted": 20,
+    "accepted": 5,
+    "skipped": {
+      "timeout": 2,
+      "ambiguous": 3,
+      "edit_size": 10
+    }
+  },
+  {
+    "task": "CHEMBL2047_EC50",
+    "validation": 51,
+    "replay_max_error": 8.881784197001252e-16,
+    "candidates": 1,
+    "attempted": 1,
+    "accepted": 0,
+    "skipped": {
+      "timeout": 0,
+      "ambiguous": 0,
+      "edit_size": 1
+    }
+  },
+  {
+    "task": "CHEMBL2147_Ki",
+    "validation": 117,
+    "replay_max_error": 4.440892098500626e-16,
+    "candidates": 3,
+    "attempted": 3,
+    "accepted": 3,
+    "skipped": {
+      "timeout": 0,
+      "ambiguous": 0,
+      "edit_size": 0
+    }
+  },
+  {
+    "task": "CHEMBL244_Ki",
+    "validation": 247,
+    "replay_max_error": 8.881784197001252e-16,
+    "candidates": 19,
+    "attempted": 19,
+    "accepted": 10,
+    "skipped": {
+      "timeout": 2,
+      "ambiguous": 0,
+      "edit_size": 7
+    }
+  }
+]

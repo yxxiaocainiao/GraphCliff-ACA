@@ -1,0 +1,15 @@
+{
+  "task": "CHEMBL234_Ki",
+  "arm": "shallow",
+  "epochs": 100,
+  "checkpoint_rule": "fixed_epoch_100",
+  "train_count": 2924,
+  "test": {
+    "rmse": 0.6198145975282252,
+    "cliff_rmse": 0.6332378737937756
+  },
+  "parameters": 6055535,
+  "graph_initial_sha256": "dd0b8a17c01029b5e06075aac4ea1f8de156d8dbf61c9ac7db69443e53a467d3",
+  "alpha": -0.010334922932088375,
+  "seconds": 252.03200000000652
+}

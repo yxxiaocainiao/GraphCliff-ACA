@@ -1,0 +1,25 @@
+{
+  "task": "CHEMBL234_Ki",
+  "seed": 42,
+  "arm": "margin",
+  "initial_sha256": "74cfe54fa4c8b7e720bc10caf3f2856eeb83a16ec3406e7af26bdf72985199e4",
+  "parameters": 6021198,
+  "best_epoch": 57,
+  "epochs": 72,
+  "train_count": 2632,
+  "valid_count": 292,
+  "validation_geometry": {
+    "positive_pairs": 6,
+    "positive_cosine": 0.9877917170524597,
+    "positive_active": 6,
+    "negative_pairs": 4,
+    "negative_cosine": 0.9853537082672119,
+    "negative_active": 4,
+    "positive_delta_mae": 0.27250608305136365,
+    "negative_delta_mae": 0.9384200684726238
+  },
+  "seconds": 179.545999999973,
+  "test_labels_read": false,
+  "rmse": 0.572418881920477,
+  "cliff_rmse": 0.5939297918457762
+}
