@@ -88,4 +88,6 @@ P1完成：新24/24及重载审计通过，48模型/12四组配对齐全，旧�
 
 用户询问是否可以提交，按既有origin公开发布授权执行。范围仅本仓库：当前codex/route-a-30tasks-20261011上的8个未推送历史提交，加上此次完成实验的代码/计划/报告/必要CSV与JSON复核证据及README_ACA更新。仅推送origin到同名分支，不合并或改默认分支，不写upstream。
 
-P0整理：发布readout、cosine-margin、ECFP组合、30任务及checkpoint/划分诊断的已完成证据；从artifacts只复制有效完成模型的小型history/预测/summary/manifest到docs，不发布权重、运行目录、首次无效训练、根论文PDF、paper_text全文或tools。P1校验：源文件编译、冻结hash/原模型未改、结果CSV复算、允许路径/体积/凭据扫描、暂存diff检查。P2提交推送并核对本地/远端SHA和GitHub分支内容。执行中，不启动新训练。
+P0/P1完成：整理readout、cosine-margin、ECFP组合、30任务及checkpoint/划分诊断的完成证据；从artifacts仅导出60个有效模型的history/预测/summary和3份manifest，60份预测CSV复算/分区行ID及冻结源hash通过，5份Python源码解析通过。521个发布文件约6.9MB、115个历史blob凭据模式检查零命中，暂存diff检查通过。权重、运行目录、首次无效训练、根论文PDF、paper_text全文及tools未发布。
+
+P2完成：内容提交f5a3b91627a5783f3590dfcc5e92a1cab37fc503已推送到origin/codex/route-a-30tasks-20261011，git ls-remote与本地SHA一致；GitHub tree有756个文件，520个内容允许路径全部存在（另有scope_check.json），禁止路径未出现。默认分支仍codex/graphcliff-aca、仓库PUBLIC。原model/dataset/main/train/README/LICENSE与upstream快照一致。此后仅补本发布完成记录，不新增实验或改变默认分支。

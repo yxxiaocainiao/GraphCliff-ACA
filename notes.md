@@ -68,6 +68,10 @@
 
 四组完成：24个新模型独立重载审计通过，48总模型/12完整配对；状态complete无残余训练进程。Overall/Cliff宏平均graph_mse .595254/.647402、graph_margin .586570/.632448、concat_mse .595353/.630269、concat_margin .589821/.633271。组合Cliff较单独拼接/单独损失分别恶化约.48%/.13%；无任务至少2/3种子同时胜过二者，go=false。当前组合没有稳定互补证据，不据小均值差声称显著或把原因归为梯度冲突。官方test未评价，仍是同固定train内验证的开发结果；不自动扩大。结论docs/cliff_ecfp_20261012/conclusion.md。
 
+## 2026-10-12 完成实验推送
+
+用户授权整理提交并推送origin分支，当前codex/route-a-30tasks-20261011的8个历史未推送提交及内容提交f5a3b91627a5783f3590dfcc5e92a1cab37fc503已公开。新增521文件约6.9MB：完成实验源码/报告/小型证据；60个有效模型history/预测/summary及3manifest，CSV复算/row_id/hash验证通过；5份源解析、115个历史blob凭据模式扫描零命中、暂存diff通过。GitHub tree核对756文件、允许路径齐全，无artifacts/tools/权重/paper_text；原科学代码与upstream快照一致。根论文PDF和tools保留未跟踪，全文摘录留本地。默认分支未合并或更改，未向upstream写入；接下来仅补发布记录。
+
 六次拟合与独立核验完成。Cliff RMSE（MSE / MAE / ACA）：CHEMBL234=.622703/.632913/.694268；CHEMBL2047=.515139/.565489/.597020。ACA 相对 MAE 的 Cliff 恶化9.69%/5.58%，Overall 恶化12.15%/3.38%。两任务每个 ACA epoch 均有候选，回归与三元组 loss 均下降，但没有验证收益。仅单种子先导，暂停扩大该直接配方，不宣称所有监督对比学习无效。
 
 六个重载预测最大误差 <1e-5（实际浮点舍入约1e-15），行 ID、标签和指标均匹配；报告入口另用 math.fsum 从 CSV 重算两种 RMSE。当前 graphcliff 环境无 sklearn，未安装新依赖。30 个用户 checkpoint 对初始审计 SHA 复核全未变；原模型/数据代码无改动。阶段证据与图保存在 docs/aca_pilot_20261010，完整权重和日志在 artifacts，均属于本仓库。
